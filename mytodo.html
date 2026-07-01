@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My todo List</title>
+</head>
+<style>
+    #head{
+        text-align: center;
+    }
+
+    *{
+        background-color: rgb(247, 203, 210);
+    }
+    #todos{
+        border: 2px solid burlywood;
+    }
+</style>
+<body>
+    <div id="head" > <h1>My Todo List</h1></div>
+    <div style="display: flex; justify-content: space-around;">
+        <input type="text" placeholder="Add your task"> 
+        <button onclick="addtask()" style="border-radius: 50%;">ADD +</button>
+        
+    </div>
+    <section id="todos"></section>
+
+    <script>
+        let todos=[]; let ctr=1;
+        function addtask(){
+            todos.push({
+                title: document.querySelector("input").value
+            })
+            render();
+            ctr++;
+        }
+
+        function render(){
+            document.querySelector("#todos").innerHTML="";
+            for(let i=0; i<todos.length; i++){
+                const todo=todos[i];
+                const div=document.createElement("div");
+                const h1=document.createElement("h1");
+                const button=document.createElement("button");
+                button.innerHTML="Delete";
+                h1.innerHTML=todo.title;
+                div.append(h1);
+                div.append(button);
+                div.setAttribute("id", ctr);
+                // button.setAttribute("id", del);
+                button.addEventListener('click', ()=>{
+                    todos.splice(i,1);
+                    render();
+                });
+                document.querySelector("#todos").appendChild(div);
+            }
+        }
+    </script>
+</body>
+</html>
