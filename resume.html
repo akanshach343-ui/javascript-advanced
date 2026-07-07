@@ -1,0 +1,2308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not A Resume. — Akansha Chaudhary for RayCreates</title>
+  <meta name="description"
+    content="A personalized internship proposal for RayCreates by Akansha Chaudhary — MCA student, fast learner, builder.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════ */
+    :root {
+      --cream: #F4EFE6;
+      --cream-dark: #EDE6D9;
+      --ink: #19110A;
+      --brown: #3B2916;
+      --orange: #E64E08;
+      --orange-h: #FF5F1F;
+      --muted: #8C7A68;
+      --border: #D6C9B6;
+      --green: #1E6B48;
+      --card: #EAE3D5;
+      --white: #FDFAF5;
+
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body: 'DM Sans', system-ui, sans-serif;
+      --ff-hand: 'Caveat', cursive;
+    }
+
+    /* ══════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════ */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: .45;
+    }
+
+    /* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 56px;
+      height: 64px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+
+    #navbar.scrolled {
+      box-shadow: 0 2px 20px rgba(25, 17, 10, .08);
+    }
+
+    .nav-brand {
+      font-family: var(--ff-display);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--orange);
+      letter-spacing: -.01em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--brown);
+      padding: 7px 15px;
+      border: 1px solid transparent;
+      border-radius: 99px;
+      transition: all .2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .nav-cta {
+      background: var(--orange) !important;
+      color: #fff !important;
+      border-color: var(--orange) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-h) !important;
+      border-color: var(--orange-h) !important;
+    }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all .3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      z-index: 799;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--brown);
+      padding: 12px 16px;
+      border-radius: 6px;
+      transition: background .2s;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--card);
+    }
+
+    /* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 56px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-circle {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 80px solid var(--card);
+      bottom: -200px;
+      right: -100px;
+      opacity: .7;
+      animation: floatCircle 8s ease-in-out infinite;
+    }
+
+    @keyframes floatCircle {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1.5px;
+      background: var(--orange);
+    }
+
+    .hero-h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      font-weight: 900;
+      line-height: .92;
+      letter-spacing: -.04em;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .hero-h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
+      font-style: italic;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: -.02em;
+      margin-bottom: 36px;
+    }
+
+    .greeting-pill {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--cream);
+      padding: 6px 18px;
+      border-radius: 4px;
+      font-size: .85rem;
+      font-weight: 300;
+      letter-spacing: .05em;
+      margin-bottom: 28px;
+    }
+
+    .hero-body {
+      max-width: 540px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--brown);
+      margin-bottom: 44px;
+    }
+
+    .hero-body strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ── HERO CARD (right side) ── */
+    .hero-card {
+      background: var(--ink);
+      border-radius: 12px;
+      padding: 40px 36px;
+      color: var(--cream);
+      position: relative;
+      z-index: 2;
+      align-self: center;
+      animation: fadeUp .8s .3s both;
+    }
+
+    .hero-card-label {
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .hero-card-stat {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #2D1E0E;
+    }
+
+    .hero-card-stat:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .hero-card-num {
+      font-family: var(--ff-display);
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-desc {
+      font-size: .82rem;
+      color: #7A6A58;
+      line-height: 1.5;
+    }
+
+    .hero-card-hand {
+      font-family: var(--ff-hand);
+      font-size: 1.1rem;
+      color: #5A4A38;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #2D1E0E;
+    }
+
+    /* ══════════════════════════════════════
+   SHARED
+══════════════════════════════════════ */
+    section {
+      padding: 96px 56px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 56px;
+    }
+
+    .s-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .7rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .s-label::before {
+      content: '✦';
+      font-size: .55rem;
+    }
+
+    .s-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.035em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .s-title em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .s-sub {
+      font-size: .97rem;
+      color: var(--muted);
+      max-width: 460px;
+      line-height: 1.75;
+      margin-bottom: 56px;
+    }
+
+    /* ══════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: 5px;
+      font-family: var(--ff-body);
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .02em;
+      cursor: pointer;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: transform .22s, box-shadow .22s, background .22s, color .22s, border-color .22s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-solid {
+      background: var(--orange);
+      color: #fff;
+      border-color: var(--orange);
+    }
+
+    .btn-solid:hover {
+      background: var(--orange-h);
+      border-color: var(--orange-h);
+      box-shadow: 0 8px 28px rgba(230, 78, 8, .35);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+    }
+
+    .btn-dark {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+
+    .btn-dark:hover {
+      background: var(--brown);
+      border-color: var(--brown);
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--orange);
+      border-color: #fff;
+      font-weight: 600;
+    }
+
+    .btn-white:hover {
+      background: var(--cream);
+    }
+
+    /* ══════════════════════════════════════
+   WHAT I CAN DO — dark bg grid
+══════════════════════════════════════ */
+    #help {
+      background: var(--ink);
+    }
+
+    #help .s-label {
+      color: var(--orange);
+    }
+
+    #help .s-title {
+      color: var(--cream);
+    }
+
+    #help .s-sub {
+      color: #6A5A48;
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      background: #2A1A08;
+      border: 3px solid #2A1A08;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .help-card {
+      background: #19110A;
+      padding: 44px 36px;
+      transition: background .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .help-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s ease;
+    }
+
+    .help-card:hover {
+      background: #221408;
+    }
+
+    .help-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .help-icon {
+      font-size: 1.9rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .help-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 10px;
+      letter-spacing: -.02em;
+    }
+
+    .help-card p {
+      font-size: .87rem;
+      color: #7A6A58;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      font-size: .68rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 99px;
+      border: 1px solid #3D2A14;
+      color: var(--orange);
+      font-weight: 500;
+    }
+
+    /* ══════════════════════════════════════
+   TIMELINE / PROOF
+══════════════════════════════════════ */
+    #proof {
+      background: var(--cream);
+    }
+
+    .proof-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 44px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 20px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--orange) 60%, transparent);
+    }
+
+    .tl-item {
+      position: relative;
+      margin-bottom: 44px;
+      opacity: 0;
+      transform: translateX(-16px);
+      transition: opacity .5s, transform .5s;
+    }
+
+    .tl-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .tl-item:nth-child(2) {
+      transition-delay: .1s;
+    }
+
+    .tl-item:nth-child(3) {
+      transition-delay: .2s;
+    }
+
+    .tl-item:nth-child(4) {
+      transition-delay: .3s;
+    }
+
+    .tl-item:nth-child(5) {
+      transition-delay: .4s;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -50px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--orange);
+      border: 2px solid var(--cream);
+      box-shadow: 0 0 0 3px var(--orange);
+    }
+
+    .tl-date {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .tl-item h3 {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 7px;
+      letter-spacing: -.02em;
+    }
+
+    .tl-item p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .tl-checks {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .tl-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .83rem;
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    .tl-check::before {
+      content: '✓';
+      font-weight: 700;
+    }
+
+    /* proof sidebar */
+    .proof-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .proof-quote-card {
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: 10px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proof-quote-card::before {
+      content: '"';
+      font-family: var(--ff-display);
+      font-size: 6rem;
+      color: var(--orange);
+      opacity: .2;
+      position: absolute;
+      top: -8px;
+      left: 18px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .proof-quote-card p {
+      font-family: var(--ff-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.65;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .proof-quote-card footer {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 500;
+      padding: 0;
+      background: none;
+      border: none;
+    }
+
+    .proof-skills {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+    }
+
+    .proof-skills h4 {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .skill-bar-wrap {
+      margin-bottom: 14px;
+    }
+
+    .skill-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 5px;
+    }
+
+    .skill-bar-track {
+      height: 5px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: var(--orange);
+      border-radius: 99px;
+      width: 0;
+      transition: width 1s ease;
+    }
+
+    .skill-bar-fill.animated {
+      width: var(--pct);
+    }
+
+    /* ══════════════════════════════════════
+   WHAT MAKES ME DIFFERENT
+══════════════════════════════════════ */
+    #different {
+      background: var(--card);
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .diff-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .diff-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(25, 17, 10, .1);
+    }
+
+    .diff-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--orange);
+    }
+
+    .diff-num {
+      font-family: var(--ff-display);
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .diff-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      letter-spacing: -.02em;
+    }
+
+    .diff-card p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .diff-card.dark {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .diff-card.dark .diff-num {
+      color: #2D1E0A;
+    }
+
+    .diff-card.dark h3 {
+      color: var(--cream);
+    }
+
+    .diff-card.dark p {
+      color: #6A5A48;
+    }
+
+    /* ══════════════════════════════════════
+   GITHUB STATS
+══════════════════════════════════════ */
+    #github {
+      background: var(--white);
+      padding: 64px 56px;
+    }
+
+    .gh-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .gh-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .gh-stat {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .gh-stat:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(25, 17, 10, .08);
+    }
+
+    .gh-stat-num {
+      font-family: var(--ff-display);
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .gh-stat-lbl {
+      font-size: .72rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .gh-repos {
+      margin-top: 28px;
+    }
+
+    .gh-repos-title {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .gh-repo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .gh-repo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 18px;
+      transition: border-color .2s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .gh-repo:hover {
+      border-color: var(--orange);
+    }
+
+    .gh-repo-name {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .gh-repo-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .gh-repo-lang {
+      font-size: .73rem;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: var(--card);
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .gh-repo-stars {
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    /* ══════════════════════════════════════
+   BONUS
+══════════════════════════════════════ */
+    #bonus {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    #bonus .s-label {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    #bonus .s-title {
+      color: #fff;
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .bonus-left p {
+      font-size: .97rem;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, .8);
+      margin-bottom: 14px;
+    }
+
+    .bonus-bullets {
+      list-style: none;
+      margin: 22px 0;
+    }
+
+    .bonus-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: .92rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .bonus-bullets li::before {
+      content: '→';
+      font-weight: 700;
+    }
+
+    .bonus-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 36px;
+    }
+
+    .bonus-card-eyebrow {
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .bonus-pill {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+
+    .bonus-preview {
+      font-size: .88rem;
+      color: var(--ink);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    /* ══════════════════════════════════════
+   CHALLENGE FORM
+══════════════════════════════════════ */
+    #challenge {
+      background: var(--cream);
+    }
+
+    .challenge-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .challenge-text h3 {
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -.03em;
+    }
+
+    .challenge-text p {
+      font-size: .94rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .challenge-caveat {
+      font-family: var(--ff-hand);
+      font-size: 1.5rem;
+      color: var(--orange);
+      margin-top: 28px;
+      line-height: 1.4;
+    }
+
+    .form-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 44px 40px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 5px;
+      padding: 13px 16px;
+      font-family: var(--ff-body);
+      font-size: .93rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(230, 78, 8, .12);
+    }
+
+    .form-group textarea {
+      height: 130px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #C0B4A2;
+    }
+
+    #form-msg {
+      margin-top: 14px;
+      font-size: .85rem;
+      font-weight: 500;
+      min-height: 22px;
+      transition: opacity .3s;
+    }
+
+    .msg-ok {
+      color: var(--green);
+    }
+
+    .msg-err {
+      color: var(--orange);
+    }
+
+    #submit-btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    #submit-btn:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* spinner inside button */
+    .spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, .3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #submit-btn.loading .btn-text {
+      display: none;
+    }
+
+    #submit-btn.loading .spinner {
+      display: block;
+    }
+
+    /* ══════════════════════════════════════
+   ENDING / CTA STRIP
+══════════════════════════════════════ */
+    #ending {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 80px 56px;
+      text-align: center;
+    }
+
+    #ending h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: 1;
+      margin-bottom: 16px;
+      color: var(--cream);
+    }
+
+    #ending h2 em {
+      color: var(--orange);
+      font-style: italic;
+    }
+
+    #ending p {
+      font-size: 1rem;
+      color: #6A5A48;
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #ending .ending-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    #ending .ending-hand {
+      font-family: var(--ff-hand);
+      font-size: 1.2rem;
+      color: #4A3A28;
+      margin-top: 28px;
+    }
+
+    /* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+    footer {
+      background: #100B05;
+      border-top: 1px solid #1E1208;
+      padding: 36px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-family: var(--ff-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--orange);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: .75rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #4A3A28;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .footer-copy {
+      font-size: .75rem;
+      color: #3A2A18;
+    }
+
+    /* ══════════════════════════════════════
+   MODAL
+══════════════════════════════════════ */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: rgba(25, 17, 10, .78);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-box {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 44px;
+      max-width: 560px;
+      width: 100%;
+      position: relative;
+      transform: translateY(16px);
+      transition: transform .3s;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.open .modal-box {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: color .2s;
+    }
+
+    .modal-close:hover {
+      color: var(--ink);
+    }
+
+    .modal-box h3 {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .modal-sub {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .linkedin-post {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      font-size: .9rem;
+      color: var(--ink);
+      line-height: 1.8;
+      white-space: pre-wrap;
+      font-family: var(--ff-body);
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ink);
+      color: var(--cream);
+      border: none;
+      padding: 10px 22px;
+      border-radius: 5px;
+      font-family: var(--ff-body);
+      font-size: .84rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: background .2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--brown);
+    }
+
+    .copy-btn.copied {
+      background: var(--green);
+    }
+
+    /* ══════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s, transform .6s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 {
+      transition-delay: .1s;
+    }
+
+    .reveal-d2 {
+      transition-delay: .2s;
+    }
+
+    .reveal-d3 {
+      transition-delay: .3s;
+    }
+
+    /* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .anim-1 {
+      animation: fadeUp .7s .05s both;
+    }
+
+    .anim-2 {
+      animation: fadeUp .7s .15s both;
+    }
+
+    .anim-3 {
+      animation: fadeUp .7s .25s both;
+    }
+
+    .anim-4 {
+      animation: fadeUp .7s .35s both;
+    }
+
+    .anim-5 {
+      animation: fadeUp .7s .45s both;
+    }
+
+    /* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+    @media (max-width: 960px) {
+      #navbar {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      section {
+        padding: 72px 24px;
+      }
+
+      .divider {
+        margin: 0 24px;
+      }
+
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 96px 24px 60px;
+        gap: 40px;
+      }
+
+      .hero-card {
+        width: 100%;
+      }
+
+      .hero-bg-circle {
+        display: none;
+      }
+
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bonus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .challenge-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .gh-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #github {
+        padding: 64px 24px;
+      }
+
+      .gh-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      footer {
+        padding: 32px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #ending {
+        padding: 72px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gh-stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+    }
+
+    /* ══════════════════════════════════════
+   TOAST
+══════════════════════════════════════ */
+    #toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(60px);
+      background: var(--ink);
+      color: var(--cream);
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: .88rem;
+      font-weight: 500;
+      z-index: 9999;
+      opacity: 0;
+      transition: all .35s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-brand">not a resume.</a>
+    <ul class="nav-links">
+      <li><a href="#help">What I Can Do</a></li>
+      <li><a href="#proof">Proof</a></li>
+      <li><a href="#different">Why Me</a></li>
+      <li><a href="#bonus">Free Value</a></li>
+      <li><a href="#challenge" class="nav-cta">Give Me A Task</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#help" onclick="closeMobileMenu()">What I Can Do</a>
+    <a href="#proof" onclick="closeMobileMenu()">Proof I Learn Fast</a>
+    <a href="#different" onclick="closeMobileMenu()">Why Me</a>
+    <a href="#bonus" onclick="closeMobileMenu()">Free Value For You</a>
+    <a href="#github" onclick="closeMobileMenu()">GitHub Stats</a>
+    <a href="#challenge" onclick="closeMobileMenu()">Give Me A Task →</a>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow anim-1">For Ramya &amp; Himang @ RayCreates</p>
+
+      <h1 class="hero-h1 anim-2">
+        Not A<br><em>Resume.</em>
+      </h1>
+      <p class="hero-h2 anim-3">A proposal, actually.</p>
+
+      <span class="greeting-pill anim-3">Hi Ramya and Himang 👋</span>
+
+      <p class="hero-body anim-4">
+        Instead of sending a PDF that looks like everyone else's, I spent my weekend building this.<br><br>
+        I'm <strong>Akansha</strong>, a first-year MCA student who started from a non-technical background, learned
+        Python, built projects, and is now looking for an opportunity to contribute while learning from people who are
+        <strong>actually building things.</strong><br><br>
+        The more I followed RayCreates, the more I realized — you don't need another person asking for mentorship.
+        <strong>You need people who can make your life easier.</strong>
+      </p>
+
+      <div class="hero-actions anim-5">
+        <a href="#help" class="btn btn-solid">See What I Can Help With ↓</a>
+        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <p class="hero-card-label">At A Glance</p>
+      <div class="hero-card-stat">
+        <div class="hero-card-num">~15hrs</div>
+        <div class="hero-card-desc">Time spent building this instead of sending a PDF</div>
+      </div>
+      <div class="hero-card-stat">
+        <div class="hero-card-num">3mo</div>
+        <div class="hero-card-desc">From "what's an API?" to FastAPI, SQLite, and GitHub projects</div>
+      </div>
+      <div class="hero-card-stat">
+        <div class="hero-card-num">1st yr</div>
+        <div class="hero-card-desc">MCA · Non-technical background → builder in progress</div>
+      </div>
+      <p class="hero-card-hand">Life choices questioned while debugging: classified 🙈</p>
+    </div>
+
+    <div class="hero-bg-circle"></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ WHAT I CAN DO ══ -->
+  <section id="help">
+    <p class="s-label">What I Can Take Off Your Plate</p>
+    <h2 class="s-title">You focus on building.<br><em>I'll handle the rest.</em></h2>
+    <p class="s-sub">A lot of valuable work never gets done because someone needs to do it. That's where I come in.</p>
+
+    <div class="help-grid reveal">
+      <div class="help-card">
+        <span class="help-icon">✍️</span>
+        <h3>Content</h3>
+        <p>A lot of valuable work never gets published because someone needs to write it. I can convert ideas, workshops
+          and technical discussions into content people actually read.</p>
+        <div class="tags">
+          <span class="tag">Blog Posts</span>
+          <span class="tag">LinkedIn Posts</span>
+          <span class="tag">Workshop Summaries</span>
+          <span class="tag">Docs</span>
+        </div>
+      </div>
+
+      <div class="help-card">
+        <span class="help-icon">🤝</span>
+        <h3>Community</h3>
+        <p>Every workshop generates questions, responses and insights that vanish unless someone captures them. I can
+          organize feedback, engage with students and maintain communication channels.</p>
+        <div class="tags">
+          <span class="tag">Student Engagement</span>
+          <span class="tag">Social Media</span>
+          <span class="tag">Feedback Collection</span>
+          <span class="tag">Testimonials</span>
+        </div>
+      </div>
+
+      <div class="help-card">
+        <span class="help-icon">⚙️</span>
+        <h3>Product Support</h3>
+        <p>I don't claim to know everything. I do claim that I learn quickly and enjoy figuring things out. I can
+          contribute through testing, frontend tasks and API work while I learn.</p>
+        <div class="tags">
+          <span class="tag">Testing</span>
+          <span class="tag">Frontend</span>
+          <span class="tag">API Integration</span>
+          <span class="tag">Documentation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ PROOF ══ -->
+  <section id="proof">
+    <p class="s-label">Proof I Learn Fast</p>
+    <h2 class="s-title">Three months ago.<br><em>Today.</em></h2>
+    <p class="s-sub">The best proof isn't what I say. It's what I've built.</p>
+
+    <div class="proof-layout">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-date">Three months ago</p>
+          <h3>I barely knew how APIs worked.</h3>
+          <p>Non-technical background. No CS foundation. Just curiosity and a decision to start — and not wait until I
+            felt ready.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-date">Month 1</p>
+          <h3>Python from scratch.</h3>
+          <p>Variables, functions, data structures, logic. Built small projects. Broke things. Fixed them. Repeated
+            until things clicked.</p>
+          <div class="tl-checks">
+            <span class="tl-check">Python basics to intermediate</span>
+            <span class="tl-check">First GitHub repositories</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-date">Month 2</p>
+          <h3>FastAPI + Backends.</h3>
+          <p>Learned how the web actually works. Built REST API endpoints. Connected a frontend to a backend. Worked
+            with SQLite for data storage.</p>
+          <div class="tl-checks">
+            <span class="tl-check">FastAPI · REST APIs</span>
+            <span class="tl-check">SQLite · Databases</span>
+            <span class="tl-check">Pydantic validation</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <p class="tl-date">Month 3</p>
+          <h3>Built independently.</h3>
+          <p>GitHub projects from scratch. Deployed work. And then — built this entire website as a proposal, including
+            a live backend you're hitting right now.</p>
+          <div class="tl-checks">
+            <span class="tl-check">Full-stack project independently</span>
+            <span class="tl-check">GitHub API integration</span>
+            <span class="tl-check">This website — live backend and all</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background: var(--green); box-shadow: 0 0 0 3px var(--green);"></div>
+          <p class="tl-date" style="color: var(--green);">Right now</p>
+          <h3>Looking for the next thing to build.</h3>
+          <p>That's why this website exists. Give me a task and let's find out what's next.</p>
+          <div style="margin-top: 14px;">
+            <a href="#challenge" class="btn btn-solid" style="font-size: .82rem; padding: 10px 20px;">Give Me A
+              Challenge ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- sidebar -->
+      <div class="proof-sidebar">
+        <div class="proof-quote-card">
+          <p>This website itself is the proof. You're looking at it right now — frontend, backend, database, API routes.
+            All of it.</p>
+          <footer>Frontend · FastAPI · SQLite · GitHub API</footer>
+        </div>
+
+        <div class="proof-skills" id="skills-box">
+          <h4>Current Skill Levels</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Python</span><span>75%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--pct:75%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>FastAPI / Backend</span><span>60%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--pct:60%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>HTML / CSS / JS</span><span>70%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--pct:70%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Content Writing</span><span>85%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--pct:85%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Learning Quickly</span><span>99%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--pct:99%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ WHAT MAKES ME DIFFERENT ══ -->
+  <section id="different">
+    <p class="s-label">What Makes Me Different</p>
+    <h2 class="s-title">Not emotions.<br><em>Leverage.</em></h2>
+    <p class="s-sub">Here's why this is actually useful to you, specifically.</p>
+
+    <div class="diff-grid">
+      <div class="diff-card reveal reveal-d1">
+        <div class="diff-num">01</div>
+        <h3>I Think Like The Person You're Trying To Reach</h3>
+        <p>You're builders. I'm still close enough to the beginner stage to genuinely understand the questions,
+          confusion and challenges new learners face. That perspective helps create content, docs and resources that
+          actually make sense to the people you're trying to help.</p>
+      </div>
+      <div class="diff-card reveal reveal-d2">
+        <div class="diff-num">02</div>
+        <h3>This Website Exists For A Reason</h3>
+        <p>Most people send resumes. I built something. Not because it's perfect. Not because it's production-ready. But
+          because I wanted to show initiative before asking for an opportunity. If this is what I do before getting a
+          yes — imagine after.</p>
+      </div>
+      <div class="diff-card reveal reveal-d3">
+        <div class="diff-num">03</div>
+        <h3>I'm Not Waiting To Feel Ready</h3>
+        <p>If I waited until I knew everything, this website wouldn't exist. I'd rather learn by building than prepare
+          forever. That's the same philosophy that makes RayCreates interesting — you build, then figure it out.</p>
+      </div>
+      <div class="diff-card dark reveal reveal-d1">
+        <div class="diff-num">04</div>
+        <h3>I Did The Work First</h3>
+        <p>Free value before any ask. A sample LinkedIn post for your next workshop. A proposal that doesn't just ask —
+          it gives. Check the next section. It's already done.</p>
+        <div style="margin-top: 24px;">
+          <a href="#bonus" class="btn btn-solid" style="font-size: .82rem; padding: 10px 20px;">See Free Value ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ GITHUB STATS ══ -->
+  <section id="github" style="background: var(--white); padding: 64px 56px;">
+    <div class="gh-header">
+      <div>
+        <p class="s-label" style="margin-bottom: 8px;">Live From GitHub</p>
+        <h2 class="s-title" style="font-size: 2rem; margin-bottom: 0;">Public Profile</h2>
+      </div>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" class="btn btn-ghost"
+        style="font-size: .8rem; padding: 10px 20px;">View Profile ↗</a>
+    </div>
+
+    <div class="gh-stats-grid" id="gh-stats">
+      <div class="gh-stat">
+        <div class="gh-stat-num">—</div>
+        <div class="gh-stat-lbl">Repositories</div>
+      </div>
+      <div class="gh-stat">
+        <div class="gh-stat-num">—</div>
+        <div class="gh-stat-lbl">Followers</div>
+      </div>
+      <div class="gh-stat">
+        <div class="gh-stat-num">—</div>
+        <div class="gh-stat-lbl">Total Stars</div>
+      </div>
+      <div class="gh-stat">
+        <div class="gh-stat-num">—</div>
+        <div class="gh-stat-lbl">Languages</div>
+      </div>
+    </div>
+
+    <div class="gh-repos" id="gh-repos" style="display:none;">
+      <p class="gh-repos-title">Recent Repositories</p>
+      <div class="gh-repo-list" id="gh-repo-list"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ BONUS ══ -->
+  <section id="bonus">
+    <p class="s-label">Before I Ask For Something</p>
+    <h2 class="s-title">Here's something<br><em>for you.</em></h2>
+
+    <div class="bonus-grid reveal" style="margin-top: 56px;">
+      <div class="bonus-left">
+        <p>I noticed that RayCreates has conducted multiple workshops, but most of that value disappears after the event
+          ends.</p>
+        <p>Every workshop creates:</p>
+        <ul class="bonus-bullets">
+          <li>Social proof</li>
+          <li>Community trust</li>
+          <li>Future registrations</li>
+          <li>Brand credibility</li>
+        </ul>
+        <p>That value doesn't have to disappear. Here's a ready-to-publish LinkedIn post you could use for your next
+          workshop — written by me, free to use, no strings attached.</p>
+        <button onclick="openModal()" class="btn btn-white" style="margin-top: 8px;">
+          View &amp; Copy The Post ↗
+        </button>
+      </div>
+
+      <div class="bonus-card">
+        <p class="bonus-card-eyebrow">LinkedIn Post — Workshop Announcement</p>
+        <span class="bonus-pill">Ready to publish</span>
+        <p class="bonus-preview">
+          Most people watch tutorials. We run workshops.<br><br>
+          There's a difference between consuming content and actually building something.<br><br>
+          At RayCreates, we design every workshop around one goal: you leave with something working...
+          <em style="color: var(--muted);">[click to read full post]</em>
+        </p>
+        <button onclick="openModal()" class="btn btn-solid" style="font-size: .84rem; padding: 10px 22px;">
+          Read &amp; Copy Full Post →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ CHALLENGE FORM ══ -->
+  <section id="challenge">
+    <p class="s-label">Give Me A Task</p>
+
+    <div class="challenge-layout">
+      <div class="challenge-text">
+        <h3>Still not convinced?<br>That's fair.</h3>
+        <p>Most people trust results over words. So here's my proposal:</p>
+        <p>Give me one small task. One. If I deliver, we continue. If I don't, you lose nothing.</p>
+        <p>Leave me a challenge using this form. I'll get it done and come back with the work — no follow-up needed on
+          your end.</p>
+        <p>You're not hiring me. You're testing me.</p>
+        <p class="challenge-caveat">"Pehle istemaal karein,<br>phir vishwas karein 😄"</p>
+      </div>
+
+      <div class="form-box">
+        <div class="form-group">
+          <label for="f-name">Your Name</label>
+          <input type="text" id="f-name" placeholder="Ramya or Himang" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" placeholder="hello@raycreates.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="f-challenge">The Challenge</label>
+          <textarea id="f-challenge"
+            placeholder="Give me something to build, write, test, summarise, design... anything. The more specific the better."></textarea>
+        </div>
+        <button class="btn btn-solid" id="submit-btn" onclick="submitChallenge()">
+          <span class="btn-text">Send the Challenge ✦</span>
+          <span class="spinner"></span>
+        </button>
+        <div id="form-msg"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ ENDING ══ -->
+  <section id="ending">
+    <h2>Ready to find out<br><em>what I can do?</em></h2>
+    <p>Give me a task. One task. That's all it takes.</p>
+    <div class="ending-btns">
+      <a href="#challenge" class="btn btn-solid">Leave Me A Challenge</a>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" class="btn btn-ghost"
+        style="border-color: #2D1E0A; color: #6A5A48;">View GitHub ↗</a>
+      <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" class="btn btn-ghost"
+        style="border-color: #2D1E0A; color: #6A5A48;">LinkedIn ↗</a>
+    </div>
+    <p class="ending-hand">Built with chai ☕ and a stubborn refusal to send a PDF.</p>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <span class="footer-brand">Akansha Chaudhary</span>
+    <ul class="footer-links">
+      <li><a href="/resume.pdf" download>Resume ↓</a></li>
+      <li><a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub ↗</a></li>
+      <li><a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">LinkedIn ↗</a></li>
+      <li><a href="mailto:akansha@example.com">Email</a></li>
+    </ul>
+    <span class="footer-copy">MCA Year 1 · Built 2025</span>
+  </footer>
+
+  <!-- ══ MODAL ══ -->
+  <div class="modal-backdrop" id="modal-bg" onclick="handleModalBgClick(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3>Free LinkedIn Post</h3>
+      <p class="modal-sub">Written for RayCreates. Free to use, edit, and publish — no credit needed.</p>
+      <div class="linkedin-post" id="post-text">A pattern I've noticed after running multiple workshops:
+
+        People don't come back because a workshop is free.
+
+        They come back when they leave feeling, "I finally understand this."
+
+        That has been one of the most rewarding parts of building these sessions.
+
+        Our recent workshop on building a DSA Hint Engine with Ollama wasn't about following a tutorial step-by-step or
+        copying code from a repository. The focus was on helping participants understand how local LLMs work, how
+        different modules fit together, and how to build something practical from scratch.
+
+        What makes me happiest isn't the registration count.
+
+        It's seeing familiar names return workshop after workshop and watching people become more confident tackling
+        concepts that once felt overwhelming.
+
+        One of the attendees recently shared their experience after the session, and feedback like this is exactly why
+        we keep doing what we do.
+
+        [Attach attendee testimonial screenshot]
+
+        To everyone who has joined our workshops so far—thank you for showing up consistently, asking thoughtful
+        questions, and making these sessions genuinely interactive.
+
+        And if you've been thinking about joining one but keep waiting for the "right time," this is your sign.
+
+        We're building a learning community, not just hosting workshops.
+
+        See you in the next one. 🚀
+
+        #Ollama #LLM #AIEngineering #Python #DeveloperCommunity #TechEducation #LearningInPublic #BuildInPublic
+
+
+      </div>
+      <button class="copy-btn" id="copy-btn" onclick="copyPost()">📋 Copy to clipboard</button>
+    </div>
+  </div>
+
+  <!-- ══ TOAST ══ -->
+  <div id="toast">✓ Copied to clipboard!</div>
+
+  <script>
+    /* ─────────────────────────────────
+       NAV SCROLL + HAMBURGER
+    ───────────────────────────────── */
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+
+      // highlight active nav link
+      const sections = document.querySelectorAll('section[id]');
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const el = document.querySelector(a.getAttribute('href'));
+        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    /* ─────────────────────────────────
+       INTERSECTION OBSERVER (reveal)
+    ───────────────────────────────── */
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // timeline items
+    const tlObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.tl-item').forEach(el => tlObs.observe(el));
+
+    // skill bars
+    const skillObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.skill-bar-fill').forEach(b => b.classList.add('animated'));
+        }
+      });
+    }, { threshold: 0.2 });
+    const skillsBox = document.getElementById('skills-box');
+    if (skillsBox) skillObs.observe(skillsBox);
+
+    /* ─────────────────────────────────
+       GITHUB API
+    ───────────────────────────────── */
+    const GH_USER = 'YOUR_GITHUB_USERNAME'; // ← replace with your actual username
+
+    async function loadGitHub() {
+      try {
+        const [userRes, reposRes] = await Promise.all([
+          fetch(`https://api.github.com/users/${GH_USER}`),
+          fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`)
+        ]);
+        if (!userRes.ok) throw new Error('GitHub fetch failed');
+        const user = await userRes.json();
+        const repos = await reposRes.json();
+
+        const stars = repos.reduce((acc, r) => acc + (r.stargazers_count || 0), 0);
+        const langs = [...new Set(repos.map(r => r.language).filter(Boolean))];
+
+        document.getElementById('gh-stats').innerHTML = `
+      <div class="gh-stat"><div class="gh-stat-num">${user.public_repos}</div><div class="gh-stat-lbl">Repositories</div></div>
+      <div class="gh-stat"><div class="gh-stat-num">${user.followers}</div><div class="gh-stat-lbl">Followers</div></div>
+      <div class="gh-stat"><div class="gh-stat-num">${stars}</div><div class="gh-stat-lbl">Stars Earned</div></div>
+      <div class="gh-stat"><div class="gh-stat-num">${langs.slice(0, 3).join(' · ') || '—'}</div><div class="gh-stat-lbl">Top Languages</div></div>
+    `;
+
+        const topRepos = repos.filter(r => !r.fork).slice(0, 4);
+        if (topRepos.length) {
+          document.getElementById('gh-repos').style.display = 'block';
+          document.getElementById('gh-repo-list').innerHTML = topRepos.map(r => `
+        <a class="gh-repo" href="${r.html_url}" target="_blank" rel="noopener">
+          <span class="gh-repo-name">${r.name}</span>
+          <span class="gh-repo-meta">
+            ${r.language ? `<span class="gh-repo-lang">${r.language}</span>` : ''}
+            <span class="gh-repo-stars">★ ${r.stargazers_count}</span>
+          </span>
+        </a>
+      `).join('');
+        }
+      } catch {
+        document.getElementById('gh-stats').innerHTML = `
+      <div class="gh-stat"><div class="gh-stat-num">10+</div><div class="gh-stat-lbl">Repositories</div></div>
+      <div class="gh-stat"><div class="gh-stat-num">Python</div><div class="gh-stat-lbl">Primary Language</div></div>
+      <div class="gh-stat"><div class="gh-stat-num">FastAPI</div><div class="gh-stat-lbl">Backend Stack</div></div>
+      <div class="gh-stat"><div class="gh-stat-num">Active</div><div class="gh-stat-lbl">Status</div></div>
+    `;
+      }
+    }
+    loadGitHub();
+
+    /* ─────────────────────────────────
+       MODAL
+    ───────────────────────────────── */
+    function openModal() {
+      document.getElementById('modal-bg').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('modal-bg').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function handleModalBgClick(e) {
+      if (e.target === document.getElementById('modal-bg')) closeModal();
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    function copyPost() {
+      const text = document.getElementById('post-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('✓ Post copied to clipboard!');
+        const btn = document.getElementById('copy-btn');
+        btn.classList.add('copied');
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '📋 Copy to clipboard';
+        }, 2500);
+      });
+    }
+
+    /* ─────────────────────────────────
+       TOAST
+    ───────────────────────────────── */
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    /* ─────────────────────────────────
+       CHALLENGE FORM → backend
+    ───────────────────────────────── */
+    async function submitChallenge() {
+      const name = document.getElementById('f-name').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const challenge = document.getElementById('f-challenge').value.trim();
+      const msg = document.getElementById('form-msg');
+      const btn = document.getElementById('submit-btn');
+
+      msg.textContent = '';
+
+      // client-side validation
+      if (!name || name.length < 2) return setMsg('Please enter your name.', false);
+      if (!email || !email.includes('@')) return setMsg('Please enter a valid email.', false);
+      if (!challenge || challenge.length < 10) return setMsg('Please describe the challenge (at least 10 characters).', false);
+
+      btn.classList.add('loading');
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('/api/challenge', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, challenge })
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          setMsg('✓ Challenge received! I\'ll get back to you with the work done.', true);
+          document.getElementById('f-name').value = '';
+          document.getElementById('f-email').value = '';
+          document.getElementById('f-challenge').value = '';
+          showToast('Challenge submitted! 🎯');
+        } else {
+          setMsg(data.detail || data.message || 'Something went wrong. Please try again.', false);
+        }
+      } catch {
+        setMsg('Network error — please check your connection and try again.', false);
+      }
+
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    }
+
+    function setMsg(text, ok) {
+      const msg = document.getElementById('form-msg');
+      msg.textContent = text;
+      msg.className = ok ? 'msg-ok' : 'msg-err';
+    }
+
+    // allow Enter on single-line inputs to move to next
+    document.getElementById('f-name').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('f-email').focus();
+    });
+    document.getElementById('f-email').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('f-challenge').focus();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+.main{
+    background-color: aqua;
+    margin-left: 40%;
+}
+
+.sidebar{
+    background-color: rgb(240, 240, 151);
+    display:flex;
+    left: -40%;
+    width: 40%;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    top:0;
+    left:0;
+    transition: left 2 ease-in;
+}
+.sidebar.active{
+    left:0;
+}
+
+@media (max-width:768px){
+    .sidebar{
+        display: none;
+    }
+    .main{
+        margin: 0;
+    }
+}

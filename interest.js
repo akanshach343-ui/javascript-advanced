@@ -1,0 +1,1 @@
+export const calculateInterest =(p,r,t) => (p*r*t)/100;
