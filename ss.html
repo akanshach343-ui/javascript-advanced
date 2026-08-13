@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreedha Ventures | Exhibition Fabrication & Custom Displays</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --charcoal: #1A1A1B;
+            --emerald: #064E3B;
+            --gold: #B68D40;
+            --off-white: #F4F4F4;
+            --slate-gray: #334155;
+            --accent-green: #10B981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--off-white);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Subtle Jaali Pattern Overlay */
+        .jaali-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%20%23064e3b' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(26, 26, 27, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?auto=format&fit=crop&q=80&w=2070') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 10%;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            background: var(--gold);
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 2px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "निर्माण"; /* Fabrication in Hindi */
+            position: absolute;
+            right: -60px;
+            top: -10px;
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            opacity: 0.6;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-left: 5px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            filter: grayscale(20%);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-bottom: 4px solid transparent;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            border-bottom: 4px solid var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--emerald);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Portfolio / Process Section */
+        .process-showcase {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            background: #222;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(6, 78, 59, 0.9);
+            padding: 1.5rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .label-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--gold);
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Why Us Section */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            background: white;
+            padding: 4rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+        }
+
+        form button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--charcoal);
+            color: var(--gold);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: #888;
+            padding: 50px 10%;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid, .contact-container, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body class="jaali-bg">
+
+    <nav>
+        <div class="logo">Shreedha<span style="color:white">Ventures</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">The Studio</a></li>
+            <li><a href="#services">Expertise</a></li>
+            <li><a href="#portfolio">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <p style="letter-spacing: 5px; color: var(--gold); margin-bottom: 10px;">DESIGN • FABRICATE • EXECUTE</p>
+        <h1>Engineering the Art <br>of Physical Spaces.</h1>
+        <p>From conceptual sketches to industrial fabrication, Shreedha Ventures delivers end-to-end exhibition environments and custom structures built with precision and soul.</p>
+        <a href="#portfolio" class="btn">VIEW OUR BUILDS</a>
+    </section>
+
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" alt="Fabrication workshop">
+            </div>
+            <div>
+                <h2 class="section-title">The Blueprint of Our Core</h2>
+                <p>Based in the heart of industrial innovation, Shreedha Ventures is more than a design house. We are a <strong>fabrication-first</strong> agency. We believe that a design is only as good as its final on-ground execution.</p>
+                <br>
+                <p>Our philosophy is rooted in the Indian spirit of craftsmanship—merging traditional attention to detail with modern engineering techniques. We don't just deliver stalls; we build environments that tell a story through metal, wood, and light.</p>
+                <br>
+                <div style="display: flex; gap: 20px; color: var(--emerald);">
+                    <div><i class="fas fa-check-circle"></i> In-house Workshop</div>
+                    <div><i class="fas fa-check-circle"></i> PAN India Setup</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background: #f0f0f0;">
+        <h2 class="section-title">Capabilities</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>Exhibition Stall Fabrication</h3>
+                <p>Custom-built stalls that translate your brand's digital identity into a tangible, high-impact physical presence.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-drafting-compass"></i>
+                <h3>Custom Installations</h3>
+                <p>Bespoke structural installations for corporate offices, public spaces, and high-end retail environments.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-truck-loading"></i>
+                <h3>On-Site Execution</h3>
+                <p>Meticulous management of logistics, assembly, and on-ground installation anywhere in the country.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-microchip"></i>
+                <h3>Technical Production</h3>
+                <p>Integration of lighting, AV, and smart display technologies into the physical fabrication of your space.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="process-showcase">
+        <h2 class="section-title" style="color: white;">Sketch to Reality</h2>
+        <p style="margin-bottom: 40px; color: #aaa;">Explore our journey from the initial 3D render to the final on-site execution.</p>
+        
+        <div class="portfolio-grid">
+            <!-- Item 1 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000" alt="Project A">
+                <div class="portfolio-overlay">
+                    <span class="label-tag">Corporate Pavilion</span>
+                    <h3>The Tech-Summit Build</h3>
+                    <p>Focus: Modular Steel Fabrication & 3D Lighting</p>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1000" alt="Project B">
+                <div class="portfolio-overlay">
+                    <span class="label-tag">Trade Show</span>
+                    <h3>Industrial Expo 2024</h3>
+                    <p>Focus: Heavy Duty Custom Truss Systems</p>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000" alt="Project C">
+                <div class="portfolio-overlay">
+                    <span class="label-tag">Bespoke Design</span>
+                    <h3>Artisan Collective Display</h3>
+                    <p>Focus: Woodwork & Vernacular Aesthetics</p>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&q=80&w=1000" alt="Work in progress">
+                <div class="portfolio-overlay">
+                    <span class="label-tag">Fabrication Stage</span>
+                    <h3>Process: The Frame Build</h3>
+                    <p>Showing the raw structural integrity before finishing.</p>
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?auto=format&fit=crop&q=80&w=1000" alt="3D design">
+                <div class="portfolio-overlay">
+                    <span class="label-tag">Design Phase</span>
+                    <h3>The Virtual Prototype</h3>
+                    <p>Photorealistic renders used for planning.</p>
+                </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1000" alt="Finished Stall">
+                <div class="portfolio-overlay">
+                    <span class="label-tag">Grand Opening</span>
+                    <h3>The Final Execution</h3>
+                    <p>On-ground 24 hours post-installation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Why Shreedha?</h2>
+        <div class="features">
+            <div class="feature-item">
+                <h3>0%</h3>
+                <p>Outsourcing. We own our fabrication units.</p>
+            </div>
+            <div class="feature-item">
+                <h3>100+</h3>
+                <p>Spaces engineered across India.</p>
+            </div>
+            <div class="feature-item">
+                <h3>24/7</h3>
+                <p>On-site support during event days.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Design</h3>
+                <p>Sensitive to Indian heritage & modern needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="brand-font" style="font-size: 2.5rem; color: var(--emerald);">Let’s Build <br>Something Real.</h2>
+                <p>Have a blueprint or just a spark of an idea? Let our fabrication experts bring it to life.</p>
+                <br><br>
+                <p><strong>Location:</strong><br>Okhla Industrial Estate, Phase III,<br>New Delhi, India</p>
+                <br>
+                <p><strong>Inquiries:</strong><br>contact@shreedhaventures.com<br>+91 98765 43210</p>
+            </div>
+            <div>
+                <form>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <input type="text" placeholder="Company Name">
+                    <textarea rows="5" placeholder="Project Brief (Dimensions, City, Event Date)"></textarea>
+                    <button type="submit">Initialize Project</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1rem;">Shreedha</div>
+                <p>Transforming ideas into physical landmarks. Dedicated to the spirit of Make in India.</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1rem;">Sitemap</h4>
+                <p>About Us</p>
+                <p>Our Process</p>
+                <p>Portfolio</p>
+                <p>Careers</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1rem;">Social</h4>
+                <div style="display: flex; gap: 15px; font-size: 1.2rem;">
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-behance"></i>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 50px; text-align: center; font-size: 0.8rem;">
+            &copy; 2024 Shreedha Ventures. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .portfolio-item').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.6s ease-out";
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
