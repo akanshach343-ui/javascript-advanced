@@ -1,0 +1,3387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* =========================================================
+   SHREEDHA VENTURES
+   OUR STORY
+========================================================= */
+
+
+        /* =========================================================
+   SECTION
+========================================================= */
+
+        .story-section {
+
+            width: 100%;
+
+            /*
+       Deliberately NOT 100vh.
+       This keeps the section visually important
+       without allowing it to take over the page.
+    */
+
+            padding: 90px 0 85px;
+
+            background: var(--card);
+
+            color: var(--ink);
+
+            overflow: hidden;
+        }
+
+
+
+        /* =========================================================
+   CONTAINER
+========================================================= */
+
+        .story-container {
+
+            width: 84%;
+
+            max-width: 1180px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 0.9fr) minmax(0, 1fr);
+
+            gap: clamp(55px, 7vw, 100px);
+
+            align-items: center;
+        }
+
+
+
+        /* =========================================================
+   LEFT IMAGE COLUMN
+========================================================= */
+
+        .story-image-column {
+
+            width: 100%;
+
+            max-width: 480px;
+
+            justify-self: center;
+        }
+
+
+
+        /* =========================================================
+   IMAGE FRAME
+========================================================= */
+
+        .story-image-frame {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 465px;
+
+            overflow: hidden;
+
+            background: var(--line);
+
+            /*
+       Simple terracotta frame.
+       No overlapping cards.
+    */
+
+            border-left: 7px solid var(--terracotta);
+
+            box-shadow:
+                0 18px 45px rgba(28, 37, 41, 0.10);
+        }
+
+
+        .story-image-frame img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            /*
+       Keeps the person visible and
+       crops the lower social-media UI
+       from the screenshot/source.
+    */
+
+            object-position: center 24%;
+
+            filter:
+                saturate(0.82) contrast(0.96);
+
+            transition:
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+
+        .story-image-frame:hover img {
+
+            transform: scale(1.025);
+        }
+
+
+
+        /* =========================================================
+   IMAGE CAPTION
+========================================================= */
+
+        .story-image-caption {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding-top: 13px;
+
+            border-bottom: 1px solid var(--line);
+
+            padding-bottom: 12px;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 0.18em;
+
+            color: var(--muted);
+        }
+
+
+        .story-image-caption span:first-child {
+
+            color: var(--terracotta);
+
+            font-weight: 600;
+        }
+
+
+
+        /* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+        .story-content {
+
+            max-width: 570px;
+
+            padding: 10px 0;
+        }
+
+
+
+        /* =========================================================
+   EYEBROW
+========================================================= */
+
+        .story-eyebrow {
+
+            margin-bottom: 20px;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.25em;
+
+            text-transform: uppercase;
+
+            color: var(--terracotta);
+        }
+
+
+
+        /* =========================================================
+   HEADING
+========================================================= */
+
+        .story-heading {
+
+            margin: 0;
+
+            max-width: 560px;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(48px, 5vw, 68px);
+
+            font-weight: 500;
+
+            line-height: 0.98;
+
+            letter-spacing: -0.045em;
+
+            color: var(--ink);
+        }
+
+
+        .story-heading span {
+
+            display: block;
+
+            margin-top: 4px;
+
+            color: var(--terracotta);
+
+            font-style: italic;
+
+            font-weight: 400;
+        }
+
+
+
+        /* =========================================================
+   DIVIDER
+========================================================= */
+
+        .story-divider {
+
+            width: 55px;
+
+            height: 1px;
+
+            margin: 30px 0 27px;
+
+            background: var(--terracotta);
+        }
+
+
+
+        /* =========================================================
+   STORY TEXT
+========================================================= */
+
+        .story-text {
+
+            max-width: 510px;
+        }
+
+
+        .story-text p {
+
+            margin: 0 0 19px;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            color: var(--muted);
+        }
+
+
+        .story-text p:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+
+        /* =========================================================
+   HERITAGE / SANSKRIT DETAIL
+========================================================= */
+
+        .story-signature {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 17px;
+
+            margin-top: 32px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid var(--line);
+        }
+
+
+
+        /* Sanskrit */
+
+        .story-sanskrit {
+
+            font-family:
+                "Noto Serif Devanagari",
+                serif;
+
+            font-size: 17px;
+
+            color: var(--ink);
+
+            white-space: nowrap;
+        }
+
+
+
+        /* Small line */
+
+        .story-signature-line {
+
+            width: 35px;
+
+            height: 1px;
+
+            background: var(--terracotta);
+        }
+
+
+
+        /* English translation */
+
+        .story-signature-text {
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size: 7px;
+
+            line-height: 1.5;
+
+            letter-spacing: 0.13em;
+
+            color: var(--muted);
+        }
+
+
+
+        /* =========================================================
+   TABLET
+========================================================= */
+
+        @media (max-width: 950px) {
+
+            .story-section {
+
+                padding:
+                    75px 0 70px;
+            }
+
+
+            .story-container {
+
+                width: 86%;
+
+                gap: 55px;
+            }
+
+
+            .story-image-frame {
+
+                height: 420px;
+            }
+
+
+            .story-heading {
+
+                font-size: 48px;
+            }
+
+
+            .story-text p {
+
+                font-size: 12px;
+            }
+
+        }
+
+
+
+        /* =========================================================
+   MOBILE
+========================================================= */
+
+        @media (max-width: 760px) {
+
+            .story-section {
+
+                padding:
+                    65px 0 60px;
+            }
+
+
+            .story-container {
+
+                width: 88%;
+
+                display: flex;
+
+                flex-direction: column;
+
+                gap: 48px;
+
+                align-items: stretch;
+            }
+
+
+            /* ---------------------------------------------
+       IMAGE
+    --------------------------------------------- */
+
+            .story-image-column {
+
+                max-width: 100%;
+            }
+
+
+            .story-image-frame {
+
+                height: 420px;
+
+                border-left-width: 5px;
+            }
+
+
+            /* ---------------------------------------------
+       CONTENT
+    --------------------------------------------- */
+
+            .story-content {
+
+                max-width: 100%;
+
+                padding: 0;
+            }
+
+
+            .story-heading {
+
+                font-size:
+                    clamp(43px,
+                        11vw,
+                        58px);
+            }
+
+
+            .story-divider {
+
+                margin:
+                    25px 0;
+            }
+
+
+            .story-text p {
+
+                font-size: 12px;
+
+                line-height: 1.75;
+            }
+
+
+            .story-signature {
+
+                margin-top: 27px;
+            }
+
+        }
+
+
+
+        /* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+        @media (max-width: 480px) {
+
+            .story-section {
+
+                padding:
+                    55px 0 50px;
+            }
+
+
+            .story-container {
+
+                width: 90%;
+
+                gap: 40px;
+            }
+
+
+            .story-image-frame {
+
+                height: 350px;
+            }
+
+
+            .story-image-caption {
+
+                font-size: 7px;
+            }
+
+
+            .story-heading {
+
+                font-size: 42px;
+            }
+
+
+            .story-eyebrow {
+
+                font-size: 8px;
+            }
+
+
+            .story-sanskrit {
+
+                font-size: 15px;
+            }
+
+        }
+
+        /* =========================================================
+   SHREEDHA VENTURES
+   FOOTER + QUOTE PANEL
+========================================================= */
+
+
+        /* ---------------------------------------------------------
+   COLOUR SYSTEM
+--------------------------------------------------------- */
+
+        :root {
+
+            --ink: #1c2529;
+
+            --terracotta: #98533f;
+
+            /* slightly richer version for footer */
+            --terracotta-deep: #874332;
+
+            /* lighter warm terracotta */
+            --terracotta-soft: #b46a52;
+
+            --muted: #756f67;
+
+            --line: #c8beb2;
+
+            --card: #e3ded5;
+
+            --paper: #f4f0e9;
+
+            --white: #fffdf9;
+
+        }
+
+
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+        .site-footer {
+
+            width: 100%;
+
+            background:
+                linear-gradient(135deg,
+                    var(--terracotta-deep),
+                    var(--terracotta));
+
+            color: var(--white);
+
+            padding: 70px 7% 25px;
+
+            /* IMPORTANT:
+       Not full-screen */
+            min-height: auto;
+
+            position: relative;
+
+        }
+
+
+        /* subtle texture */
+
+        .site-footer::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: 0.08;
+
+            background-image:
+                linear-gradient(rgba(255, 255, 255, .15) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(255, 255, 255, .15) 1px,
+                    transparent 1px);
+
+            background-size: 80px 80px;
+
+        }
+
+
+        /* ---------------------------------------------------------
+   FOOTER CONTENT
+--------------------------------------------------------- */
+
+        .footer-inner {
+
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.25fr .75fr 1fr;
+
+            gap: 90px;
+
+            align-items: start;
+
+        }
+
+
+        /* ---------------------------------------------------------
+   FOOTER HEADINGS
+--------------------------------------------------------- */
+
+        .footer-column h3 {
+
+            margin: 0;
+
+            font-family: Georgia, serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+            text-transform: lowercase;
+
+            letter-spacing: -0.5px;
+
+        }
+
+
+        /* small golden/cream underline */
+
+        .footer-line {
+
+            width: 58px;
+
+            height: 2px;
+
+            background: var(--card);
+
+            margin: 12px 0 28px;
+
+            opacity: .9;
+
+        }
+
+
+        /* ---------------------------------------------------------
+   FOOTER LINKS
+--------------------------------------------------------- */
+
+        .footer-column a {
+
+            display: block;
+
+            width: fit-content;
+
+            color: rgba(255, 255, 255, .84);
+
+            text-decoration: none;
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            font-size: 15px;
+
+            margin-bottom: 17px;
+
+            transition:
+                color .25s ease,
+                transform .25s ease;
+
+        }
+
+
+        .footer-column a:hover {
+
+            color: #ffffff;
+
+            transform: translateX(4px);
+
+        }
+
+
+        /* =========================================================
+   VISIT US / MAP
+========================================================= */
+
+        .footer-map {
+
+            width: 100%;
+
+            max-width: 360px;
+
+            height: 155px;
+
+            border: 1px solid rgba(255, 255, 255, .25);
+
+            overflow: hidden;
+
+            background: rgba(255, 255, 255, .08);
+
+        }
+
+
+        /* temporary map */
+
+        .map-placeholder {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: rgba(255, 255, 255, .65);
+
+            font-size: 13px;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+        .footer-bottom {
+
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 1250px;
+
+            margin: 55px auto 0;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid rgba(255, 255, 255, .22);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            color: rgba(255, 255, 255, .65);
+
+            font-size: 12px;
+
+            letter-spacing: .02em;
+
+        }
+
+
+        /* =========================================================
+   FLOATING BUTTONS
+========================================================= */
+
+        .floating-actions {
+
+            position: fixed;
+
+            right: 28px;
+
+            bottom: 28px;
+
+            z-index: 9999;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 14px;
+
+        }
+
+
+        /* common button */
+
+        .floating-btn {
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, .18);
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+
+        }
+
+
+        /* quote */
+
+        .floating-quote {
+
+            background: var(--ink);
+
+            color: white;
+
+        }
+
+
+        /* whatsapp */
+
+        .floating-whatsapp {
+
+            background: #20c96b;
+
+            color: white;
+
+        }
+
+
+        .floating-btn:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 16px 35px rgba(0, 0, 0, .25);
+
+        }
+
+
+        /* quote icon */
+
+        .floating-icon {
+
+            width: 22px;
+
+            height: 17px;
+
+            border: 2px solid currentColor;
+
+            border-radius: 4px;
+
+            font-size: 0;
+
+            position: relative;
+
+        }
+
+
+        .floating-icon::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 6px;
+
+            height: 6px;
+
+            border-left: 2px solid currentColor;
+
+            border-bottom: 2px solid currentColor;
+
+            bottom: -5px;
+
+            left: 4px;
+
+            transform: skewY(-25deg);
+
+        }
+
+
+        /* whatsapp svg */
+
+        .floating-whatsapp svg {
+
+            width: 28px;
+
+            height: 28px;
+
+            fill: currentColor;
+
+        }
+
+
+        /* =========================================================
+   QUOTE OVERLAY
+========================================================= */
+
+        .quote-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(28, 37, 41, .38);
+
+            backdrop-filter: blur(7px);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity .35s ease,
+                visibility .35s ease;
+
+            z-index: 10000;
+
+        }
+
+
+        .quote-overlay.open {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        /* =========================================================
+   QUOTE PANEL
+========================================================= */
+
+        .quote-panel {
+
+            position: fixed;
+
+            top: 50%;
+
+            right: 28px;
+
+            transform:
+                translateY(-50%) translateX(110%);
+
+            width: min(390px, calc(100vw - 40px));
+
+            /* THIS MAKES IT MORE RECTANGULAR */
+            max-height: 88vh;
+
+            background: var(--white);
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, .25);
+
+            z-index: 10001;
+
+            transition:
+                transform .4s cubic-bezier(.22, .61, .36, 1);
+
+        }
+
+
+        /* open */
+
+        .quote-panel.open {
+
+            transform:
+                translateY(-50%) translateX(0);
+
+        }
+
+
+        /* =========================================================
+   QUOTE HEADER
+========================================================= */
+
+        .quote-header {
+
+            background: var(--terracotta);
+
+            color: white;
+
+            padding: 25px 28px 23px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 20px;
+
+        }
+
+
+        .quote-eyebrow {
+
+            display: block;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: .13em;
+
+            text-transform: uppercase;
+
+            opacity: .75;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .quote-header h2 {
+
+            margin: 0;
+
+            font-family: Georgia, serif;
+
+            font-size: 26px;
+
+            line-height: 1.1;
+
+            font-weight: 500;
+
+        }
+
+
+        .quote-header p {
+
+            margin: 7px 0 0;
+
+            font-size: 13px;
+
+            color: rgba(255, 255, 255, .78);
+
+        }
+
+
+        /* close button */
+
+        .quote-close {
+
+            flex-shrink: 0;
+
+            width: 38px;
+
+            height: 38px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, .16);
+
+            color: white;
+
+            font-size: 25px;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition:
+                background .2s ease,
+                transform .2s ease;
+
+        }
+
+
+        .quote-close:hover {
+
+            background: rgba(255, 255, 255, .25);
+
+            transform: rotate(5deg);
+
+        }
+
+
+        /* =========================================================
+   QUOTE FORM
+========================================================= */
+
+        .quote-form {
+
+            padding: 24px 28px 26px;
+
+            /*
+       CRITICAL:
+       The form itself can scroll if the screen
+       is too short.
+    */
+
+            max-height: calc(88vh - 120px);
+
+            overflow-y: auto;
+
+        }
+
+
+        /* scrollbar */
+
+        .quote-form::-webkit-scrollbar {
+
+            width: 5px;
+
+        }
+
+        .quote-form::-webkit-scrollbar-track {
+
+            background: transparent;
+
+        }
+
+        .quote-form::-webkit-scrollbar-thumb {
+
+            background: var(--line);
+
+            border-radius: 10px;
+
+        }
+
+
+        /* =========================================================
+   FORM GROUP
+========================================================= */
+
+        .form-group {
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: .09em;
+
+            color: var(--ink);
+
+        }
+
+
+        .form-group input {
+
+            width: 100%;
+
+            height: 49px;
+
+            padding: 0 14px;
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 12px;
+
+            background: #fff;
+
+            color: var(--ink);
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 14px;
+
+            outline: none;
+
+            box-sizing: border-box;
+
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease;
+
+        }
+
+
+        .form-group input::placeholder {
+
+            color: #9a948d;
+
+        }
+
+
+        .form-group input:focus {
+
+            border-color: var(--terracotta);
+
+            box-shadow:
+                0 0 0 3px rgba(152, 83, 63, .10);
+
+        }
+
+
+        /* =========================================================
+   TWO COLUMN FORM ROW
+========================================================= */
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 13px;
+
+        }
+
+
+        /* =========================================================
+   NOTE
+========================================================= */
+
+        .quote-note {
+
+            padding: 13px 15px;
+
+            margin: 5px 0 17px;
+
+            background: var(--card);
+
+            color: var(--muted);
+
+            border-radius: 10px;
+
+            font-size: 11.5px;
+
+            line-height: 1.55;
+
+        }
+
+
+        /* =========================================================
+   SUBMIT
+========================================================= */
+
+        .quote-submit {
+
+            width: 100%;
+
+            height: 50px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: var(--ink);
+
+            color: white;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 17px 0 19px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition:
+                background .25s ease,
+                transform .25s ease;
+
+        }
+
+
+        .quote-submit:hover {
+
+            background: var(--terracotta-deep);
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .submit-arrow {
+
+            font-size: 20px;
+
+        }
+
+
+        /* =========================================================
+   RESPONSIVE
+========================================================= */
+
+        @media (max-width: 800px) {
+
+            .site-footer {
+
+                padding:
+                    55px 7% 22px;
+
+            }
+
+
+            .footer-inner {
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 45px;
+
+            }
+
+
+            .footer-visit {
+
+                grid-column: 1 / -1;
+
+            }
+
+
+            .footer-map {
+
+                max-width: 100%;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .site-footer {
+
+                padding:
+                    45px 6% 20px;
+
+            }
+
+
+            .footer-inner {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+            }
+
+
+            .footer-visit {
+
+                grid-column: auto;
+
+            }
+
+
+            .footer-bottom {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                margin-top: 40px;
+
+            }
+
+
+            /* quote panel */
+
+            .quote-panel {
+
+                right: 12px;
+
+                left: 12px;
+
+                width: auto;
+
+                max-height: 90vh;
+
+                border-radius: 20px;
+
+            }
+
+
+            .quote-panel.open {
+
+                transform:
+                    translateY(-50%) translateX(0);
+
+            }
+
+
+            .quote-header {
+
+                padding:
+                    21px 22px;
+
+            }
+
+
+            .quote-header h2 {
+
+                font-size: 23px;
+
+            }
+
+
+            .quote-form {
+
+                padding:
+                    21px 22px 24px;
+
+                max-height:
+                    calc(90vh - 105px);
+
+            }
+
+
+            .floating-actions {
+
+                right: 17px;
+
+                bottom: 17px;
+
+                gap: 11px;
+
+            }
+
+
+            .floating-btn {
+
+                width: 52px;
+
+                height: 52px;
+
+            }
+
+        }
+
+
+        @media (max-height: 700px) {
+
+            .quote-panel {
+
+                max-height: 92vh;
+
+            }
+
+            .quote-form {
+
+                max-height:
+                    calc(92vh - 110px);
+
+            }
+
+        }
+
+        /* =========================================================
+   PAN INDIA SECTION
+========================================================= */
+
+        .pan-india {
+
+            position: relative;
+
+            width: 100%;
+
+            /*
+       Reduced from 800px.
+       This keeps the section important without
+       making it feel like another hero section.
+    */
+
+            min-height: 650px;
+
+            margin-top: 0;
+
+            padding:
+                85px 7vw 70px;
+
+            border-radius:
+                32px 32px 0 0;
+
+            background:
+                var(--ink);
+
+            color:
+                #f3eee5;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================================
+   PAN INDIA CONTENT
+========================================================= */
+
+        .pan-india-content {
+
+            position: relative;
+
+            z-index: 10;
+
+            width: 360px;
+        }
+
+
+        .pan-india .services-eyebrow {
+
+            color:
+                var(--line);
+
+            margin-bottom:
+                16px;
+        }
+
+
+        .pan-india-content h2 {
+
+            margin: 0;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(44px, 4.5vw, 66px);
+
+            font-weight:
+                500;
+
+            line-height:
+                0.98;
+
+            letter-spacing:
+                -0.04em;
+        }
+
+
+        .pan-india-content h2 em {
+
+            font-style:
+                normal;
+
+            color:
+                var(--terracotta);
+        }
+
+
+        .pan-india-content p {
+
+            max-width:
+                350px;
+
+            margin:
+                26px 0 0;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size:
+                13px;
+
+            line-height:
+                1.75;
+
+            color:
+                var(--line);
+        }
+
+
+        /* =========================================================
+   INDIA NETWORK
+========================================================= */
+
+        .india-network {
+
+            position: absolute;
+
+            top: 90px;
+
+            right: 7vw;
+
+            width: 520px;
+
+            height: 400px;
+        }
+
+
+        /* =========================================================
+   INDIA NODE
+========================================================= */
+
+        .india-node {
+
+            position: absolute;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 90px;
+
+            height: 90px;
+
+            border:
+                9px solid var(--terracotta);
+
+            border-radius:
+                50%;
+
+            background:
+                var(--card);
+
+            z-index: 5;
+
+            transition:
+                transform 0.45s ease;
+        }
+
+
+        .india-node:hover {
+
+            transform:
+                scale(1.06);
+        }
+
+
+        /* =========================================================
+   NODE IMAGE
+========================================================= */
+
+        .node-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            border-radius:
+                50%;
+
+            overflow: hidden;
+        }
+
+
+        .node-image img {
+
+            display: block;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.7s ease;
+        }
+
+
+        .india-node:hover .node-image img {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* =========================================================
+   NODE LABEL
+========================================================= */
+
+        .india-node span {
+
+            position: absolute;
+
+            bottom:
+                -25px;
+
+            left:
+                50%;
+
+            transform:
+                translateX(-50%);
+
+            white-space:
+                nowrap;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size:
+                8px;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                0.2em;
+
+            color:
+                var(--line);
+        }
+
+
+        /* =========================================================
+   CENTRE NODE
+========================================================= */
+
+        .node-centre {
+
+            width: 130px;
+
+            height: 130px;
+
+            border-width:
+                11px;
+        }
+
+
+        /* =========================================================
+   NODE POSITIONS
+
+   Network:
+   520px × 400px
+
+   Centre:
+   left 195px
+   top 135px
+   size 130px
+
+   Every line is calculated from the
+   actual edge of the circles.
+========================================================= */
+
+
+        /* NORTH */
+
+        .node-north {
+
+            top:
+                25px;
+
+            left:
+                215px;
+        }
+
+
+        /* WEST */
+
+        .node-west {
+
+            top:
+                155px;
+
+            left:
+                45px;
+        }
+
+
+        /* CENTRE */
+
+        .node-centre {
+
+            top:
+                135px;
+
+            left:
+                195px;
+        }
+
+
+        /* EAST */
+
+        .node-east {
+
+            top:
+                155px;
+
+            right:
+                45px;
+        }
+
+
+        /* SOUTH */
+
+        .node-south {
+
+            bottom:
+                20px;
+
+            left:
+                215px;
+        }
+
+
+        /* =========================================================
+   NETWORK LINES
+========================================================= */
+
+        .network-line {
+
+            position: absolute;
+
+            display: block;
+
+            background:
+                var(--line);
+
+            opacity:
+                0.42;
+
+            z-index:
+                1;
+        }
+
+
+        /* =========================================================
+   NORTH → CENTRE
+
+   North bottom = 115px
+   Centre top  = 135px
+
+   So line bridges exactly
+   between the two circles.
+========================================================= */
+
+        .line-north {
+
+            width:
+                2px;
+
+            height:
+                20px;
+
+            top:
+                115px;
+
+            left:
+                260px;
+        }
+
+
+        /* =========================================================
+   WEST → CENTRE
+========================================================= */
+
+        .line-west {
+
+            width:
+                60px;
+
+            height:
+                2px;
+
+            top:
+                200px;
+
+            left:
+                135px;
+        }
+
+
+        /* =========================================================
+   CENTRE → EAST
+========================================================= */
+
+        .line-east {
+
+            width:
+                60px;
+
+            height:
+                2px;
+
+            top:
+                200px;
+
+            left:
+                325px;
+        }
+
+
+        /* =========================================================
+   CENTRE → SOUTH
+========================================================= */
+
+        .line-south {
+
+            width:
+                2px;
+
+            height:
+                20px;
+
+            top:
+                265px;
+
+            left:
+                260px;
+        }
+
+
+        /* =========================================================
+   INDIA MAP WATERMARK
+========================================================= */
+
+        .india-map-watermark {
+
+            position:
+                absolute;
+
+            right:
+                7vw;
+
+            bottom:
+                30px;
+
+            width:
+                300px;
+
+            height:
+                280px;
+
+            z-index:
+                0;
+
+            pointer-events:
+                none;
+
+            opacity:
+                0.09;
+        }
+
+
+        .india-map-watermark img {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                contain;
+
+            object-position:
+                center;
+
+            /*
+       If your SVG is terracotta,
+       this keeps it subtle.
+    */
+
+            filter:
+                saturate(0.7);
+        }
+
+
+        /* =========================================================
+   PAN INDIA FOOTER
+========================================================= */
+
+        .pan-india-footer {
+
+            position:
+                absolute;
+
+            left:
+                7vw;
+
+            right:
+                7vw;
+
+            bottom:
+                34px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                18px;
+
+            z-index:
+                10;
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            font-size:
+                8px;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                0.22em;
+
+            color:
+                var(--line);
+        }
+
+
+        .pan-line {
+
+            width:
+                70px;
+
+            height:
+                1px;
+
+            background:
+                var(--terracotta);
+        }
+
+
+        /* =========================================================
+   TABLET
+========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .pan-india {
+
+                min-height:
+                    700px;
+
+                padding:
+                    75px 6vw 70px;
+            }
+
+
+            .pan-india-content {
+
+                width:
+                    330px;
+            }
+
+
+            .india-network {
+
+                right:
+                    4vw;
+
+                width:
+                    470px;
+
+                height:
+                    370px;
+            }
+
+
+            .node-north {
+
+                left:
+                    195px;
+            }
+
+
+            .node-centre {
+
+                left:
+                    175px;
+            }
+
+
+            .node-west {
+
+                left:
+                    30px;
+            }
+
+
+            .node-east {
+
+                right:
+                    30px;
+            }
+
+
+            .node-south {
+
+                left:
+                    195px;
+            }
+
+
+            /*
+       Recalculate connection points
+       for the smaller network.
+    */
+
+            .line-north {
+
+                left:
+                    240px;
+            }
+
+
+            .line-west {
+
+                left:
+                    120px;
+
+                width:
+                    55px;
+            }
+
+
+            .line-east {
+
+                left:
+                    305px;
+
+                width:
+                    55px;
+            }
+
+
+            .line-south {
+
+                left:
+                    240px;
+            }
+
+
+            .india-map-watermark {
+
+                right:
+                    5vw;
+
+                bottom:
+                    25px;
+
+                width:
+                    260px;
+
+                height:
+                    240px;
+            }
+        }
+
+
+        /* =========================================================
+   MOBILE
+========================================================= */
+
+        @media (max-width: 650px) {
+
+            .pan-india {
+
+                min-height:
+                    690px;
+
+                padding:
+                    65px 25px 70px;
+
+                border-radius:
+                    24px 24px 0 0;
+            }
+
+
+            .pan-india-content {
+
+                width:
+                    100%;
+            }
+
+
+            .pan-india-content h2 {
+
+                font-size:
+                    46px;
+            }
+
+
+            .pan-india-content p {
+
+                max-width:
+                    320px;
+
+                font-size:
+                    12px;
+
+                line-height:
+                    1.7;
+
+                margin-top:
+                    20px;
+            }
+
+
+            /* =====================================================
+       MOBILE NETWORK
+    ===================================================== */
+
+            .india-network {
+
+                top:
+                    310px;
+
+                left:
+                    50%;
+
+                right:
+                    auto;
+
+                width:
+                    330px;
+
+                height:
+                    300px;
+
+                transform:
+                    translateX(-50%);
+            }
+
+
+            .india-node {
+
+                width:
+                    68px;
+
+                height:
+                    68px;
+
+                border-width:
+                    7px;
+            }
+
+
+            .node-centre {
+
+                width:
+                    94px;
+
+                height:
+                    94px;
+
+                border-width:
+                    8px;
+            }
+
+
+            /* NORTH */
+
+            .node-north {
+
+                top:
+                    0;
+
+                left:
+                    131px;
+            }
+
+
+            /* WEST */
+
+            .node-west {
+
+                top:
+                    105px;
+
+                left:
+                    12px;
+            }
+
+
+            /* CENTRE */
+
+            .node-centre {
+
+                top:
+                    92px;
+
+                left:
+                    118px;
+            }
+
+
+            /* EAST */
+
+            .node-east {
+
+                top:
+                    105px;
+
+                right:
+                    12px;
+            }
+
+
+            /* SOUTH */
+
+            .node-south {
+
+                bottom:
+                    5px;
+
+                left:
+                    131px;
+            }
+
+
+            /* =====================================================
+       MOBILE CONNECTIONS
+    ===================================================== */
+
+            .line-north {
+
+                width:
+                    2px;
+
+                height:
+                    24px;
+
+                top:
+                    68px;
+
+                left:
+                    164px;
+            }
+
+
+            .line-west {
+
+                width:
+                    38px;
+
+                height:
+                    2px;
+
+                top:
+                    139px;
+
+                left:
+                    80px;
+            }
+
+
+            .line-east {
+
+                width:
+                    38px;
+
+                height:
+                    2px;
+
+                top:
+                    139px;
+
+                left:
+                    212px;
+            }
+
+
+            .line-south {
+
+                width:
+                    2px;
+
+                height:
+                    20px;
+
+                top:
+                    186px;
+
+                left:
+                    164px;
+            }
+
+
+            /* =====================================================
+       MAP WATERMARK
+    ===================================================== */
+
+            .india-map-watermark {
+
+                right:
+                    20px;
+
+                bottom:
+                    70px;
+
+                width:
+                    210px;
+
+                height:
+                    190px;
+
+                opacity:
+                    0.07;
+            }
+
+
+            /* =====================================================
+       FOOTER
+    ===================================================== */
+
+            .pan-india-footer {
+
+                left:
+                    25px;
+
+                right:
+                    25px;
+
+                bottom:
+                    25px;
+
+                gap:
+                    12px;
+
+                font-size:
+                    6px;
+
+                letter-spacing:
+                    0.17em;
+            }
+
+
+            .pan-line {
+
+                width:
+                    45px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- =====================================================
+     OUR STORY
+===================================================== -->
+
+    <section class="story-section" id="our-story">
+
+        <div class="story-container">
+
+            <!-- ==============================================
+             LEFT — IMAGE
+        =============================================== -->
+
+            <div class="story-image-column">
+
+                <div class="story-image-frame">
+
+                    <img src="assets/story-founder.jpg" alt="Shreedha Ventures story">
+
+                </div>
+
+                <div class="story-image-caption">
+
+                    <span>OUR STORY</span>
+
+                    <span>SHREEDHA VENTURES</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================================
+             RIGHT — STORY
+        =============================================== -->
+
+            <div class="story-content">
+
+                <div class="story-eyebrow">
+                    A STORY IN THE MAKING
+                </div>
+
+
+                <h2 class="story-heading">
+
+                    From service
+
+                    <span>
+                        to creating impact.
+                    </span>
+
+                </h2>
+
+
+                <div class="story-divider"></div>
+
+
+                <div class="story-text">
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. From an idea sketched on
+                        paper to an experience brought to life,
+                        our journey has always been shaped by
+                        curiosity, discipline and a desire to
+                        create something meaningful.
+                    </p>
+
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Integer posuere erat a
+                        ante. We believe that every space has a
+                        story to tell — and every detail has the
+                        power to make that story memorable.
+                    </p>
+
+                </div>
+
+
+                <!-- Small heritage detail -->
+
+                <div class="story-signature">
+
+                    <span class="story-sanskrit">
+                        शं नो वरुणः
+                    </span>
+
+                    <span class="story-signature-line"></span>
+
+                    <span class="story-signature-text">
+                        GUARDIANS UNDER<br>
+                        VARUNA'S WATCH
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+     PAN INDIA SECTION
+========================================================= -->
+
+    <section class="pan-india">
+
+        <!-- CONTENT -->
+
+        <div class="pan-india-content">
+
+            <div class="services-eyebrow">
+                WHERE WE WORK
+            </div>
+
+            <h2>
+                One vision.
+                <em>Everywhere.</em>
+            </h2>
+
+            <p>
+                From Delhi to Mumbai, Bengaluru to Kolkata,
+                our network allows us to design, fabricate
+                and execute exhibition experiences across India.
+            </p>
+
+        </div>
+
+
+        <!-- =====================================================
+         INDIA NETWORK
+    ====================================================== -->
+
+        <div class="india-network">
+
+            <!-- NORTH -->
+
+            <div class="india-node node-north">
+
+                <div class="node-image">
+                    <img src="assets/india-north.jpg" alt="Exhibition project in North India">
+                </div>
+
+                <span>NORTH</span>
+
+            </div>
+
+
+            <!-- WEST -->
+
+            <div class="india-node node-west">
+
+                <div class="node-image">
+                    <img src="assets/india-west.jpg" alt="Exhibition project in West India">
+                </div>
+
+                <span>WEST</span>
+
+            </div>
+
+
+            <!-- CENTRAL -->
+
+            <div class="india-node node-centre">
+
+                <div class="node-image">
+                    <img src="assets/india-centre.jpg" alt="Exhibition project in Central India">
+                </div>
+
+                <span>CENTRAL</span>
+
+            </div>
+
+
+            <!-- EAST -->
+
+            <div class="india-node node-east">
+
+                <div class="node-image">
+                    <img src="assets/india-east.jpg" alt="Exhibition project in East India">
+                </div>
+
+                <span>EAST</span>
+
+            </div>
+
+
+            <!-- SOUTH -->
+
+            <div class="india-node node-south">
+
+                <div class="node-image">
+                    <img src="assets/india-south.jpg" alt="Exhibition project in South India">
+                </div>
+
+                <span>SOUTH</span>
+
+            </div>
+
+
+            <!-- CONNECTION LINES -->
+
+            <span class="network-line line-north"></span>
+            <span class="network-line line-west"></span>
+            <span class="network-line line-east"></span>
+            <span class="network-line line-south"></span>
+
+        </div>
+
+
+        <!-- =====================================================
+         INDIA MAP WATERMARK
+    ====================================================== -->
+
+        <div class="india-map-watermark">
+
+            <img src="assets/india-map-outline.svg" alt="" aria-hidden="true">
+
+        </div>
+
+
+        <!-- =====================================================
+         PAN INDIA FOOTER
+    ====================================================== -->
+
+        <div class="pan-india-footer">
+
+            <span>
+                PAN INDIA SERVICE
+            </span>
+
+            <span class="pan-line"></span>
+
+            <span>
+                DESIGN · BUILD · EXECUTE
+            </span>
+
+        </div>
+
+    </section>
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-container">
+
+            <!-- =================================================
+             VISIT US
+        ================================================== -->
+
+            <div class="footer-visit">
+
+                <h3 class="footer-heading">
+                    Visit us
+                </h3>
+
+                <div class="footer-heading-line"></div>
+
+
+                <div class="footer-location">
+
+                    <div class="footer-map">
+
+                        <!-- Replace this image with your map/location image -->
+                        <img src="assets/india-map.jpg" alt="Shreedha Ventures location">
+
+                        <div class="map-overlay">
+                            <span class="map-pin">+</span>
+                        </div>
+
+                    </div>
+
+                    <div class="footer-address">
+                        India
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+             EXPLORE
+        ================================================== -->
+
+            <div class="footer-explore">
+
+                <h3 class="footer-heading">
+                    Explore
+                </h3>
+
+                <div class="footer-heading-line"></div>
+
+
+                <nav class="footer-links">
+
+                    <a href="#about">
+                        About
+                    </a>
+
+                    <a href="#services">
+                        Services
+                    </a>
+
+                    <a href="#projects">
+                        Projects
+                    </a>
+
+                    <a href="#our-story">
+                        Our Story
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+
+            <!-- =================================================
+             GET IN TOUCH
+        ================================================== -->
+
+            <div class="footer-contact">
+
+                <h3 class="footer-heading">
+                    Get in touch
+                </h3>
+
+                <div class="footer-heading-line"></div>
+
+
+                <div class="contact-details">
+
+                    <!-- Phone -->
+
+                    <a href="tel:+919557956272" class="contact-item">
+
+                        <span class="contact-label">
+                            Phone
+                        </span>
+
+                        <span class="contact-value">
+                            +91 95579 56272
+                        </span>
+
+                    </a>
+
+
+                    <!-- Email -->
+
+                    <a href="mailto:hello@shreedhaventures.com" class="contact-item">
+
+                        <span class="contact-label">
+                            Email
+                        </span>
+
+                        <span class="contact-value">
+                            hello@shreedhaventures.com
+                        </span>
+
+                    </a>
+
+
+                    <!-- WhatsApp -->
+
+                    <a href="https://wa.me/919557956272" target="_blank" rel="noopener noreferrer" class="contact-item">
+
+                        <span class="contact-label">
+                            WhatsApp
+                        </span>
+
+                        <span class="contact-value">
+                            Start a conversation
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+         FOOTER BOTTOM
+    ====================================================== -->
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Shreedha Ventures. All rights reserved.
+            </span>
+
+
+            <button type="button" class="footer-quote-button" id="footer-quote-btn">
+                Request a free quote
+                <span>↗</span>
+            </button>
+
+        </div>
+
+    </footer>
+    <!-- =========================================================
+     QUOTE OVERLAY
+========================================================= -->
+
+    <div class="quote-overlay" id="quote-overlay"></div>
+
+
+    <!-- =========================================================
+     QUOTE PANEL
+========================================================= -->
+
+    <aside class="quote-panel" id="quote-panel">
+
+        <!-- Header -->
+        <div class="quote-header">
+
+            <div>
+                <h2>Get a Free Quote</h2>
+                <p>We'll reply on WhatsApp within a few hours.</p>
+            </div>
+
+            <button type="button" class="quote-close" id="quote-close" aria-label="Close quote form">
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Form -->
+        <form id="quote-form" class="quote-form">
+
+            <!-- Name -->
+            <div class="quote-field full">
+                <label for="q-name">NAME</label>
+
+                <input type="text" id="q-name" placeholder="Your full name" required>
+            </div>
+
+
+            <!-- Phone -->
+            <div class="quote-field full">
+                <label for="q-number">PHONE NUMBER</label>
+
+                <input type="tel" id="q-number" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+            </div>
+
+
+            <!-- Location + Stall Size -->
+            <div class="quote-row">
+
+                <div class="quote-field">
+                    <label for="q-location">LOCATION</label>
+
+                    <input type="text" id="q-location" placeholder="City / venue" required>
+                </div>
+
+
+                <div class="quote-field">
+                    <label for="q-size">STALL SIZE</label>
+
+                    <input type="text" id="q-size" placeholder="e.g. 3x3m" required>
+                </div>
+
+            </div>
+
+
+            <!-- Budget + Date -->
+            <div class="quote-row">
+
+                <div class="quote-field">
+                    <label for="q-budget">BUDGET</label>
+
+                    <input type="text" id="q-budget" placeholder="Approx. budget" required>
+                </div>
+
+
+                <div class="quote-field">
+                    <label for="q-date">EVENT DATE</label>
+
+                    <input type="date" id="q-date" required>
+                </div>
+
+            </div>
+
+
+            <!-- Privacy / Information Note -->
+            <div class="quote-note">
+
+                <p>
+                    We do not collect your phone number for marketing
+                    purposes — it's used only to get back to you about
+                    this enquiry. Feel free to share it.
+                </p>
+
+            </div>
+
+
+            <!-- Submit -->
+            <button type="submit" class="quote-submit">
+
+                <span class="whatsapp-small">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.05 0
+                        C5.5 0 .17 5.32.17 11.88
+                        c0 2.09.55 4.13 1.59 5.92L.1 24
+                        l6.35-1.63a11.86 11.86 0 0 0
+                        5.6 1.42h.01c6.55 0
+                        11.88-5.33 11.88-11.88
+                        0-3.18-1.24-6.16-3.42-8.43Z
+                        M12.06 21.8h-.01
+                        a9.87 9.87 0 0 1-5.03-1.38l-.36-.21
+                        -3.77.97 1.01-3.67-.23-.38
+                        a9.86 9.86 0 0 1-1.51-5.25
+                        c0-5.44 4.43-9.86 9.87-9.86
+                        2.63 0 5.1 1.02 6.96 2.88
+                        a9.8 9.8 0 0 1 2.9 6.98
+                        c0 5.44-4.43 9.87-9.87 9.87Zm5.42-7.39
+                        c-.3-.15-1.76-.87-2.03-.97
+                        -.27-.1-.47-.15-.67.15
+                        -.2.3-.77.97-.94 1.17
+                        -.17.2-.35.22-.65.07
+                        -.3-.15-1.26-.46-2.4-1.48
+                        -.89-.79-1.49-1.76-1.66-2.06
+                        -.17-.3-.02-.46.13-.61
+                        .13-.13.3-.35.45-.52
+                        .15-.17.2-.3.3-.5
+                        .1-.2.05-.37-.02-.52
+                        -.07-.15-.67-1.62-.92-2.22
+                        -.24-.58-.49-.5-.67-.51
+                        -.17-.01-.37-.01-.57-.01
+                        -.2 0-.52.07-.8.37
+                        -.27.3-1.04 1.02-1.04 2.48
+                        s1.07 2.88 1.22 3.08
+                        c.15.2 2.1 3.21 5.09 4.5
+                        .71.31 1.26.49 1.69.63
+                        .71.23 1.36.2 1.87.12
+                        .57-.09 1.76-.72 2.01-1.42
+                        .25-.7.25-1.3.17-1.42
+                        -.07-.12-.27-.2-.57-.35Z" />
+                    </svg>
+
+                </span>
+
+                Send via WhatsApp
+
+            </button>
+
+        </form>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+     FLOATING ACTION BUTTONS
+========================================================= -->
+
+    <div class="floating-actions">
+
+        <!-- Quote / Chat -->
+        <button class="floating-btn quote-float" id="fab-quote-btn" aria-label="Request a free quote"
+            title="Request a free quote">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                <path d="M20 2H4a2 2 0 0 0-2 2v18
+                l4-4h14a2 2 0 0 0 2-2V4
+                a2 2 0 0 0-2-2Z" />
+
+            </svg>
+
+        </button>
+
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919557956272" class="floating-btn whatsapp-float" target="_blank"
+            rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                <path d="M20.52 3.48A11.86 11.86 0 0 0
+                12.05 0C5.5 0 .17 5.32.17 11.88
+                c0 2.09.55 4.13 1.59 5.92L.1 24
+                l6.35-1.63a11.86 11.86 0 0 0
+                5.6 1.42h.01c6.55 0
+                11.88-5.33 11.88-11.88
+                0-3.18-1.24-6.16-3.42-8.43ZM12.06
+                21.8h-.01a9.87 9.87 0 0 1-5.03-1.38
+                l-.36-.21-3.77.97 1.01-3.67
+                -.23-.38a9.86 9.86 0 0 1-1.51-5.25
+                c0-5.44 4.43-9.86 9.87-9.86
+                2.63 0 5.1 1.02 6.96 2.88
+                a9.8 9.8 0 0 1 2.9 6.98
+                c0 5.44-4.43 9.87-9.87 9.87Zm5.42-7.39
+                c-.3-.15-1.76-.87-2.03-.97
+                -.27-.1-.47-.15-.67.15
+                -.2.3-.77.97-.94 1.17
+                -.17.2-.35.22-.65.07
+                -.3-.15-1.26-.46-2.4-1.48
+                -.89-.79-1.49-1.76-1.66-2.06
+                -.17-.3-.02-.46.13-.61
+                .13-.13.3-.35.45-.52
+                .15-.17.2-.3.3-.5
+                .1-.2.05-.37-.02-.52
+                -.07-.15-.67-1.62-.92-2.22
+                -.24-.58-.49-.5-.67-.51
+                -.17-.01-.37-.01-.57-.01
+                -.2 0-.52.07-.8.37
+                -.27.3-1.04 1.02-1.04 2.48
+                s1.07 2.88 1.22 3.08
+                c.15.2 2.1 3.21 5.09 4.5
+                .71.31 1.26.49 1.69.63
+                .71.23 1.36.2 1.87.12
+                .57-.09 1.76-.72 2.01-1.42
+                .25-.7.25-1.3.17-1.42
+                -.07-.12-.27-.2-.57-.35Z" />
+
+            </svg>
+
+        </a>
+
+    </div>
+
+
+
+
+
+
+    </div>
+    <script>
+        /* =========================================================
+   QUOTE PANEL
+========================================================= */
+
+        const quoteOverlay = document.getElementById("quote-overlay");
+        const quotePanel = document.getElementById("quote-panel");
+
+        const openTriggers = [
+            document.getElementById("quote-btn"),
+            document.getElementById("footer-quote-btn"),
+            document.getElementById("fab-quote-btn")
+        ];
+
+        const closeTriggers = [
+            document.getElementById("quote-close"),
+            quoteOverlay
+        ];
+
+
+        /* =========================================================
+           OPEN
+        ========================================================= */
+
+        function openQuotePanel() {
+
+            quoteOverlay.classList.add("open");
+            quotePanel.classList.add("open");
+
+            document.body.classList.add("quote-open");
+        }
+
+
+        /* =========================================================
+           CLOSE
+        ========================================================= */
+
+        function closeQuotePanel() {
+
+            quoteOverlay.classList.remove("open");
+            quotePanel.classList.remove("open");
+
+            document.body.classList.remove("quote-open");
+        }
+
+
+        /* =========================================================
+           OPEN BUTTONS
+        ========================================================= */
+
+        openTriggers.forEach((button) => {
+
+            if (button) {
+
+                button.addEventListener(
+                    "click",
+                    openQuotePanel
+                );
+
+            }
+
+        });
+
+
+        /* =========================================================
+           CLOSE BUTTONS
+        ========================================================= */
+
+        closeTriggers.forEach((element) => {
+
+            if (element) {
+
+                element.addEventListener(
+                    "click",
+                    closeQuotePanel
+                );
+
+            }
+
+        });
+
+
+        /* =========================================================
+           ESCAPE KEY
+        ========================================================= */
+
+        document.addEventListener("keydown", (event) => {
+
+            if (
+                event.key === "Escape" &&
+                quotePanel.classList.contains("open")
+            ) {
+
+                closeQuotePanel();
+
+            }
+
+        });
+
+
+        /* =========================================================
+           WHATSAPP QUOTE FORM
+        ========================================================= */
+
+        const WHATSAPP_NUMBER = "919557956272";
+
+        const quoteForm =
+            document.getElementById("quote-form");
+
+
+        if (quoteForm) {
+
+            quoteForm.addEventListener(
+                "submit",
+                function (e) {
+
+                    e.preventDefault();
+
+
+                    const name =
+                        document
+                            .getElementById("q-name")
+                            .value
+                            .trim();
+
+
+                    const number =
+                        document
+                            .getElementById("q-number")
+                            .value
+                            .trim();
+
+
+                    const location =
+                        document
+                            .getElementById("q-location")
+                            .value
+                            .trim();
+
+
+                    const size =
+                        document
+                            .getElementById("q-size")
+                            .value
+                            .trim();
+
+
+                    const budget =
+                        document
+                            .getElementById("q-budget")
+                            .value
+                            .trim();
+
+
+                    const date =
+                        document
+                            .getElementById("q-date")
+                            .value;
+
+
+                    const message =
+                        `Request a Free Quote — Shreedha Ventures
+
+Name: ${name}
+Phone: ${number}
+Location: ${location}
+Stall Size: ${size}
+Budget: ${budget}
+Event Date: ${date}`;
+
+
+                    const url =
+                        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+
+                    window.open(
+                        url,
+                        "_blank"
+                    );
+
+
+                    this.reset();
+
+                    closeQuotePanel();
+
+                }
+            );
+
+        }
+
+
+    </script>
+</body>
+
+</html>
