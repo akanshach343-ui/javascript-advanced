@@ -35,7 +35,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 22px 50px;
-            background: white;
+            background: #246191;
+            /* background: #bc4663; */
             /* border: 1px solid grey; */
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -61,6 +62,7 @@
             font-size: 15px;
             font-weight: 500;
             letter-spacing: 0.1em;
+            color: white;
         }
 
         #list li {
@@ -73,8 +75,8 @@
         }
 
         #quote-btn {
-            background: #246191;
-            color: white;
+            background: #c2d2e5;
+            color: #246191;
             /* margin-left: 5px; */
             padding: 12px 22px;
             border: none;
@@ -87,7 +89,7 @@
         }
 
         #quote-btn:hover {
-            background: #4286ad;
+            background: #c6d2e5;
 
         }
 
@@ -95,22 +97,22 @@
             position: relative;
             min-height: 100vh;
             /*background: white;*/
-            background: #4286ad;
-            overflow: hidden;
+            /* background: #4286ad; */
+            /* overflow: hidden; */
             padding-top: 100px;
             padding-bottom: 30px;
             /* here chng for gap */
         }
 
-        .grid {
+        /* .grid {
             position: absolute;
             inset: 0;
             background-image:
                 linear-gradient(rgba(0, 0, 0, 0.05)1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 0, 0, .05)1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: 1;
-        }
+            background-size: 40px 40px; */
+        /* z-index: 1;
+        } */
 
         .idea {
             position: absolute;
@@ -244,14 +246,10 @@
         .about-grid {
             position: absolute;
             inset: 0;
-            background: white;
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-
-            background-size: 40px 40px;
+            /* background: #a8c3e7; */
+            background: rgba(168, 195, 231, 0.3) ;
             z-index: 1;
-            /* pointer-events: none; */
+
         }
 
         about-grid {
@@ -289,13 +287,15 @@
             font-size: clamp(40px, 3vw, 50px);
             line-height: 1.2;
             margin-bottom: 18px;
+            color: #bc4663
         }
 
         .about-left p {
             font-size: 20px;
             line-height: 1.6;
             max-width: 46ch;
-            color: #444;
+            /* color: #444; */
+            color: #69808f;
         }
 
         .about-right {
@@ -341,8 +341,9 @@
             font-size: 12px;
             letter-spacing: .25em;
             font-weight: 600;
-            color: white;
-            background: #246191;
+            /* color: #bc4663; */
+            color: #246191;
+            background: #d2d2d3 ;
         }
 
         .card1 {
@@ -986,13 +987,25 @@
             color: inherit;
         }
 
-        #quote-btn a{
+        #quote-btn a {
             text-decoration: none;
             color: inherit;
         }
 
         #list a:hover {
             color: #33adf3;
+        }
+
+        .grid::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("cloud1.jpg") no-repeat center center;
+            background-size: cover;
+            opacity: 0.6;
+            /* transparency only for background */
+            z-index: -1;
+            /* keeps it behind content */
         }
     </style>
 </head>
