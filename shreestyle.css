@@ -1839,10 +1839,6 @@ Only the final word is accented.
 
 
 
-/* =========================================================
-   PAN INDIA SECTION
-========================================================= */
-
 .pan-india {
 
     position: relative;
@@ -1854,8 +1850,7 @@ Only the final word is accented.
     margin-top: 0;
 
     padding:
-        110px 7vw
-        80px;
+        110px 7vw 80px;
 
     border-radius:
         36px 36px 0 0;
@@ -1898,11 +1893,9 @@ Only the final word is accented.
         "Playfair Display",
         serif;
 
-    font-size: clamp(
-        48px,
-        5vw,
-        76px
-    );
+    font-size: clamp(48px,
+            5vw,
+            76px);
 
     font-weight: 500;
 
@@ -1980,8 +1973,7 @@ Only the final word is accented.
     height: 145px;
 
     border:
-        12px solid
-        var(--terracotta);
+        12px solid var(--terracotta);
 
     border-radius: 50%;
 
@@ -2029,8 +2021,7 @@ Only the final word is accented.
 }
 
 
-.india-node:hover
-.node-image img {
+.india-node:hover .node-image img {
 
     transform:
         scale(1.1);
@@ -2046,7 +2037,7 @@ Only the final word is accented.
     left: 50%;
 
     transform:
-        translateX(-50%);
+        translateX(-16%);
 
     white-space: nowrap;
 
@@ -2072,9 +2063,9 @@ Only the final word is accented.
 
 .node-north {
 
-    top: 20px;
+    top: 10px;
 
-    left: 220px;
+    left: 270px;
 }
 
 
@@ -2082,19 +2073,19 @@ Only the final word is accented.
 
     top: 210px;
 
-    left: 20px;
+    left: 60px;
 }
 
 
 .node-centre {
 
-    top: 190px;
+    top: 200px;
 
-    left: 205px;
+    left: 260px;
 
-    width: 175px;
+    width: 150px;
 
-    height: 175px;
+    height: 150px;
 
     border-width: 14px;
 }
@@ -2104,15 +2095,15 @@ Only the final word is accented.
 
     top: 210px;
 
-    right: 20px;
+    right: 10px;
 }
 
 
 .node-south {
 
-    bottom: 20px;
+    bottom: 50px;
 
-    left: 220px;
+    left: 268px;
 }
 
 
@@ -2241,34 +2232,21 @@ Only the final word is accented.
     .services-section {
 
         padding:
-            120px 7vw
-            0;
+            120px 7vw 0;
     }
 
 
-    /* -----------------------------------------------------
-       Below desktop width there isn't enough room for the
-       list and the card to both stay pinned/sticky at once.
-       That's what was causing the list and the card image
-       to overlap each other while scrolling. Instead, the
-       list becomes a plain (non-sticky) index up top, and
-       every card is shown fully, stacked one after another,
-       so nothing ever competes for the same space on screen.
-    ----------------------------------------------------- */
-
     .services-stage {
 
-        display: block;
+        grid-template-columns: 1fr;
 
-        min-height: auto;
+        min-height: 400vh;
     }
 
 
     .services-list {
 
-        position: static;
-
-        top: auto;
+        top: 100px;
 
         transform: none;
 
@@ -2277,13 +2255,13 @@ Only the final word is accented.
         grid-template-columns:
             repeat(2, 1fr);
 
-        background: none;
+        background:
+            rgba(243, 238, 229, 0.95);
 
-        backdrop-filter: none;
+        backdrop-filter:
+            blur(10px);
 
-        z-index: auto;
-
-        margin-bottom: 48px;
+        z-index: 30;
     }
 
 
@@ -2301,44 +2279,12 @@ Only the final word is accented.
 
     .services-cards {
 
-        position: static;
+        top: 55%;
 
-        top: auto;
+        height: 620px;
 
-        height: auto;
-
-        transform: none;
-
-        overflow: visible;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 28px;
-    }
-
-
-    .service-card,
-    .service-card.active,
-    .service-card.previous,
-    .service-card.next {
-
-        position: relative;
-
-        inset: auto;
-
-        opacity: 1;
-
-        transform: none;
-
-        transition: none;
-    }
-
-
-    .service-card-image {
-
-        height: 320px;
+        transform:
+            translateY(-50%);
     }
 
 
@@ -2379,8 +2325,7 @@ Only the final word is accented.
     .services-section {
 
         padding:
-            100px 6vw
-            0;
+            100px 6vw 0;
     }
 
 
@@ -2402,14 +2347,20 @@ Only the final word is accented.
     }
 
 
+    .services-stage {
+
+        min-height: 400vh;
+    }
+
+
     .services-list {
+
+        top: 85px;
 
         grid-template-columns: 1fr;
 
         padding:
             0 12px;
-
-        margin-bottom: 32px;
     }
 
 
@@ -2434,7 +2385,9 @@ Only the final word is accented.
 
     .services-cards {
 
-        gap: 20px;
+        top: 58%;
+
+        height: 540px;
     }
 
 
@@ -2682,8 +2635,7 @@ Only the final word is accented.
     */
 
     padding:
-        90px 0
-        55px;
+        90px 0 55px;
 
     background:
         #f3eee5;
@@ -2770,11 +2722,9 @@ Only the final word is accented.
     */
 
     font-size:
-        clamp(
-            48px,
+        clamp(48px,
             5vw,
-            72px
-        );
+            72px);
 
     font-weight:
         500;
@@ -2861,10 +2811,7 @@ Only the final word is accented.
         14px;
 
     animation:
-        projectsScroll
-        34s
-        linear
-        infinite;
+        projectsScroll 34s linear infinite;
 
     will-change:
         transform;
@@ -2932,18 +2879,12 @@ Only the final word is accented.
         saturate(0.82);
 
     transition:
-        transform
-        0.8s
-        cubic-bezier(
-            0.16,
+        transform 0.8s cubic-bezier(0.16,
             1,
             0.3,
-            1
-        ),
+            1),
 
-        filter
-        0.5s
-        ease;
+        filter 0.5s ease;
 }
 
 
@@ -2993,12 +2934,10 @@ Only the final word is accented.
         0;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             #f3eee5 0%,
-            rgba(243,238,229,0.92) 25%,
-            rgba(243,238,229,0) 100%
-        );
+            rgba(243, 238, 229, 0.92) 25%,
+            rgba(243, 238, 229, 0) 100%);
 }
 
 
@@ -3011,12 +2950,10 @@ Only the final word is accented.
         0;
 
     background:
-        linear-gradient(
-            270deg,
+        linear-gradient(270deg,
             #f3eee5 0%,
-            rgba(243,238,229,0.92) 25%,
-            rgba(243,238,229,0) 100%
-        );
+            rgba(243, 238, 229, 0.92) 25%,
+            rgba(243, 238, 229, 0) 100%);
 }
 
 
@@ -3037,11 +2974,7 @@ Only the final word is accented.
     to {
 
         transform:
-            translateX(
-                calc(
-                    -50% - 7px
-                )
-            );
+            translateX(calc(-50% - 7px));
 
     }
 
@@ -3071,12 +3004,10 @@ Only the final word is accented.
         hidden;
 
     border-top:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
     border-bottom:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 }
 
 
@@ -3100,10 +3031,7 @@ Only the final word is accented.
         24px;
 
     animation:
-        clientsScroll
-        30s
-        linear
-        infinite;
+        clientsScroll 30s linear infinite;
 
     will-change:
         transform;
@@ -3140,9 +3068,7 @@ Only the final word is accented.
         var(--muted);
 
     transition:
-        color
-        0.3s
-        ease;
+        color 0.3s ease;
 }
 
 
@@ -3208,11 +3134,9 @@ Only the final word is accented.
         0;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             #f3eee5,
-            rgba(243,238,229,0)
-        );
+            rgba(243, 238, 229, 0));
 }
 
 
@@ -3222,11 +3146,9 @@ Only the final word is accented.
         0;
 
     background:
-        linear-gradient(
-            270deg,
+        linear-gradient(270deg,
             #f3eee5,
-            rgba(243,238,229,0)
-        );
+            rgba(243, 238, 229, 0));
 }
 
 
@@ -3247,11 +3169,7 @@ Only the final word is accented.
     to {
 
         transform:
-            translateX(
-                calc(
-                    -50% - 12px
-                )
-            );
+            translateX(calc(-50% - 12px));
 
     }
 
@@ -3275,8 +3193,7 @@ Only the final word is accented.
         15px;
 
     padding:
-        25px 8vw
-        0;
+        25px 8vw 0;
 
     font-family:
         "DM Sans",
@@ -3314,11 +3231,9 @@ Only the final word is accented.
    HOVER PAUSE
 ========================================================= */
 
-.projects-marquee:hover
-.projects-track,
+.projects-marquee:hover .projects-track,
 
-.clients-marquee:hover
-.clients-track {
+.clients-marquee:hover .clients-track {
 
     animation-play-state:
         paused;
@@ -3330,9 +3245,7 @@ Only the final word is accented.
    ACCESSIBILITY
 ========================================================= */
 
-@media (
-    prefers-reduced-motion: reduce
-) {
+@media (prefers-reduced-motion: reduce) {
 
     .projects-track,
     .clients-track {
@@ -3354,8 +3267,7 @@ Only the final word is accented.
     .projects-section {
 
         padding:
-            75px 0
-            45px;
+            75px 0 45px;
     }
 
 
@@ -3392,8 +3304,7 @@ Only the final word is accented.
     .projects-footer {
 
         padding:
-            22px 7vw
-            0;
+            22px 7vw 0;
     }
 
 }
@@ -3409,8 +3320,7 @@ Only the final word is accented.
     .projects-section {
 
         padding:
-            65px 0
-            40px;
+            65px 0 40px;
     }
 
 
@@ -3522,11 +3432,1659 @@ Only the final word is accented.
             10px;
 
         padding:
-            20px 6vw
-            0;
+            20px 6vw 0;
 
         font-size:
             6px;
     }
 
+}
+
+/* =========================================================
+   SHREEDHA VENTURES
+   OUR STORY
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.story-section {
+
+    width: 100%;
+
+    /*
+       Deliberately NOT 100vh.
+       This keeps the section visually important
+       without allowing it to take over the page.
+    */
+
+    padding: 90px 0 85px;
+
+    background: var(--card);
+
+    color: var(--ink);
+
+    overflow: hidden;
+}
+
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.story-container {
+
+    width: 84%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr) minmax(0, 1fr);
+
+    gap: clamp(55px, 7vw, 100px);
+
+    align-items: center;
+}
+
+
+
+/* =========================================================
+   LEFT IMAGE COLUMN
+========================================================= */
+
+.story-image-column {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    justify-self: center;
+}
+
+
+
+/* =========================================================
+   IMAGE FRAME
+========================================================= */
+
+.story-image-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 465px;
+
+    overflow: hidden;
+
+    background: var(--line);
+
+    /*
+       Simple terracotta frame.
+       No overlapping cards.
+    */
+
+    border-left: 7px solid var(--terracotta);
+
+    box-shadow:
+        0 18px 45px rgba(28, 37, 41, 0.10);
+}
+
+
+.story-image-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    /*
+       Keeps the person visible and
+       crops the lower social-media UI
+       from the screenshot/source.
+    */
+
+    object-position: center 24%;
+
+    filter:
+        saturate(0.82) contrast(0.96);
+
+    transition:
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.story-image-frame:hover img {
+
+    transform: scale(1.025);
+}
+
+
+
+/* =========================================================
+   IMAGE CAPTION
+========================================================= */
+
+.story-image-caption {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 13px;
+
+    border-bottom: 1px solid var(--line);
+
+    padding-bottom: 12px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 0.18em;
+
+    color: var(--muted);
+}
+
+
+.story-image-caption span:first-child {
+
+    color: var(--terracotta);
+
+    font-weight: 600;
+}
+
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.story-content {
+
+    max-width: 570px;
+
+    padding: 10px 0;
+}
+
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.story-eyebrow {
+
+    margin-bottom: 20px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+
+    color: var(--terracotta);
+}
+
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.story-heading {
+
+    margin: 0;
+
+    max-width: 560px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(48px, 5vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.045em;
+
+    color: var(--ink);
+}
+
+
+.story-heading span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--terracotta);
+
+    font-style: italic;
+
+    font-weight: 400;
+}
+
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.story-divider {
+
+    width: 55px;
+
+    height: 1px;
+
+    margin: 30px 0 27px;
+
+    background: var(--terracotta);
+}
+
+
+
+/* =========================================================
+   STORY TEXT
+========================================================= */
+
+.story-text {
+
+    max-width: 510px;
+}
+
+
+.story-text p {
+
+    margin: 0 0 19px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+.story-text p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+
+/* =========================================================
+   HERITAGE / SANSKRIT DETAIL
+========================================================= */
+
+.story-signature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    margin-top: 32px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--line);
+}
+
+
+
+/* Sanskrit */
+
+.story-sanskrit {
+
+    font-family:
+        "Noto Serif Devanagari",
+        serif;
+
+    font-size: 17px;
+
+    color: var(--ink);
+
+    white-space: nowrap;
+}
+
+
+
+/* Small line */
+
+.story-signature-line {
+
+    width: 35px;
+
+    height: 1px;
+
+    background: var(--terracotta);
+}
+
+
+
+/* English translation */
+
+.story-signature-text {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 7px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.13em;
+
+    color: var(--muted);
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .story-section {
+
+        padding:
+            75px 0 70px;
+    }
+
+
+    .story-container {
+
+        width: 86%;
+
+        gap: 55px;
+    }
+
+
+    .story-image-frame {
+
+        height: 420px;
+    }
+
+
+    .story-heading {
+
+        font-size: 48px;
+    }
+
+
+    .story-text p {
+
+        font-size: 12px;
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .story-section {
+
+        padding:
+            65px 0 60px;
+    }
+
+
+    .story-container {
+
+        width: 88%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 48px;
+
+        align-items: stretch;
+    }
+
+
+    /* ---------------------------------------------
+       IMAGE
+    --------------------------------------------- */
+
+    .story-image-column {
+
+        max-width: 100%;
+    }
+
+
+    .story-image-frame {
+
+        height: 420px;
+
+        border-left-width: 5px;
+    }
+
+
+    /* ---------------------------------------------
+       CONTENT
+    --------------------------------------------- */
+
+    .story-content {
+
+        max-width: 100%;
+
+        padding: 0;
+    }
+
+
+    .story-heading {
+
+        font-size:
+            clamp(43px,
+                11vw,
+                58px);
+    }
+
+
+    .story-divider {
+
+        margin:
+            25px 0;
+    }
+
+
+    .story-text p {
+
+        font-size: 12px;
+
+        line-height: 1.75;
+    }
+
+
+    .story-signature {
+
+        margin-top: 27px;
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .story-section {
+
+        padding:
+            55px 0 50px;
+    }
+
+
+    .story-container {
+
+        width: 90%;
+
+        gap: 40px;
+    }
+
+
+    .story-image-frame {
+
+        height: 350px;
+    }
+
+
+    .story-image-caption {
+
+        font-size: 7px;
+    }
+
+
+    .story-heading {
+
+        font-size: 42px;
+    }
+
+
+    .story-eyebrow {
+
+        font-size: 8px;
+    }
+
+
+    .story-sanskrit {
+
+        font-size: 15px;
+    }
+
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+
+    width: 100%;
+
+    background: var(--card);
+
+    color: var(--ink);
+
+    padding:
+        65px 0 25px;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+
+/* =========================================================
+   FOOTER CONTAINER
+========================================================= */
+
+.footer-container {
+
+    width: 84%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr
+        1fr;
+
+    column-gap:
+        clamp(50px, 8vw, 110px);
+
+}
+
+
+
+/* =========================================================
+   FOOTER HEADINGS
+========================================================= */
+
+.footer-heading {
+
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: var(--ink);
+}
+
+
+.footer-heading-line {
+
+    width: 45px;
+
+    height: 2px;
+
+    margin-top: 14px;
+
+    margin-bottom: 28px;
+
+    background: var(--terracotta);
+}
+
+
+
+/* =========================================================
+   VISIT US
+========================================================= */
+
+.footer-location {
+
+    max-width: 310px;
+}
+
+
+.footer-map {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 150px;
+
+    overflow: hidden;
+
+    background: var(--line);
+
+}
+
+
+.footer-map img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        grayscale(100%)
+        sepia(15%)
+        contrast(0.9);
+
+    opacity: 0.75;
+}
+
+
+.map-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(28, 37, 41, 0.08);
+}
+
+
+.map-pin {
+
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--terracotta);
+
+    border-radius: 50%;
+
+    color: var(--terracotta);
+
+    font-size: 18px;
+
+    background:
+        rgba(227, 222, 213, 0.9);
+}
+
+
+.footer-address {
+
+    margin-top: 12px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.04em;
+
+    color: var(--muted);
+}
+
+
+
+/* =========================================================
+   EXPLORE LINKS
+========================================================= */
+
+.footer-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+
+.footer-links a {
+
+    width: fit-content;
+
+    text-decoration: none;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 14px;
+
+    color: var(--muted);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.footer-links a:hover {
+
+    color: var(--terracotta);
+
+    transform: translateX(4px);
+}
+
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 21px;
+}
+
+
+.contact-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    text-decoration: none;
+}
+
+
+.contact-label {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    color: var(--terracotta);
+}
+
+
+.contact-value {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.contact-item:hover .contact-value {
+
+    color: var(--ink);
+}
+
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+
+    width: 84%;
+
+    max-width: 1180px;
+
+    margin:
+        60px auto 0;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid var(--line);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.footer-bottom > span {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.06em;
+
+    color: var(--muted);
+}
+
+
+
+/* =========================================================
+   FOOTER QUOTE BUTTON
+========================================================= */
+
+.footer-quote-button {
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.05em;
+
+    color: var(--ink);
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.footer-quote-button span {
+
+    font-size: 14px;
+
+    color: var(--terracotta);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.footer-quote-button:hover {
+
+    color: var(--terracotta);
+}
+
+
+.footer-quote-button:hover span {
+
+    transform:
+        translate(3px, -3px);
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .footer-container {
+
+        width: 86%;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        row-gap: 55px;
+    }
+
+
+    .footer-visit {
+
+        grid-column: 1 / -1;
+    }
+
+
+    .footer-location {
+
+        max-width: 360px;
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+
+        padding:
+            55px 0 22px;
+    }
+
+
+    .footer-container {
+
+        width: 88%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 48px;
+    }
+
+
+    .footer-heading {
+
+        font-size: 22px;
+    }
+
+
+    .footer-heading-line {
+
+        margin-bottom: 22px;
+    }
+
+
+    .footer-map {
+
+        height: 140px;
+    }
+
+
+    .footer-bottom {
+
+        width: 88%;
+
+        margin-top: 50px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
+
+/* =========================================================
+   QUOTE SYSTEM
+========================================================= */
+
+:root {
+    --ink: #1c2529;
+    --terracotta: #98533f;
+    --muted: #756f67;
+    --line: #c8beb2;
+    --card: #e3ded5;
+
+    --quote-white: #f8f6f2;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.quote-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(28, 37, 41, 0.42);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+
+    z-index: 9998;
+}
+
+
+.quote-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   QUOTE PANEL
+========================================================= */
+
+.quote-panel {
+
+    position: fixed;
+
+    top: 50%;
+    right: 28px;
+
+    width: min(470px, calc(100vw - 40px));
+
+    max-height: min(720px, calc(100vh - 48px));
+
+    transform:
+        translate(110%, -50%);
+
+    background: var(--quote-white);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        transform 0.5s cubic-bezier(.22, .61, .36, 1),
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+
+    z-index: 9999;
+}
+
+
+.quote-panel.open {
+
+    transform:
+        translate(0, -50%);
+
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.quote-header {
+
+    background: var(--ink);
+
+    color: #fff;
+
+    padding: 27px 29px 24px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+}
+
+
+.quote-header h2 {
+
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+
+    line-height: 1.15;
+
+    font-weight: 600;
+}
+
+
+.quote-header p {
+
+    margin: 6px 0 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.quote-close {
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    color: white;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.quote-close:hover {
+
+    background: rgba(255, 255, 255, 0.22);
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.quote-form {
+
+    padding: 27px 29px 29px;
+
+    max-height:
+        calc(min(720px, 100vh - 48px) - 100px);
+
+    overflow-y: auto;
+}
+
+
+/* scrollbar */
+
+.quote-form::-webkit-scrollbar {
+    width: 5px;
+}
+
+.quote-form::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.quote-form::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.quote-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+
+.quote-field label {
+
+    color: var(--ink);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+.quote-field input {
+
+    width: 100%;
+
+    height: 53px;
+
+    padding: 0 16px;
+
+    border: 1px solid #dedad4;
+
+    border-radius: 16px;
+
+    background: #fff;
+
+    color: var(--ink);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.quote-field input::placeholder {
+    color: #99948d;
+}
+
+
+.quote-field input:focus {
+
+    border-color: var(--terracotta);
+
+    box-shadow:
+        0 0 0 3px rgba(152, 83, 63, 0.10);
+}
+
+
+/* =========================================================
+   TWO COLUMN ROW
+========================================================= */
+
+.quote-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   INFORMATION NOTE
+========================================================= */
+
+.quote-note {
+
+    margin-top: 3px;
+
+    margin-bottom: 20px;
+
+    padding: 13px 15px;
+
+    border-radius: 14px;
+
+    background: rgba(152, 83, 63, 0.10);
+
+    border: 1px solid rgba(152, 83, 63, 0.12);
+}
+
+
+.quote-note p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 12.5px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.quote-submit {
+
+    width: 100%;
+
+    height: 56px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    background: var(--ink);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.quote-submit:hover {
+
+    background: var(--terracotta);
+
+    transform: translateY(-2px);
+}
+
+
+.quote-submit:active {
+
+    transform: translateY(0);
+}
+
+
+/* WhatsApp icon inside button */
+
+.whatsapp-small {
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.whatsapp-small svg {
+
+    width: 19px;
+    height: 19px;
+
+    fill: currentColor;
+}
+
+
+/* =========================================================
+   FLOATING ACTION BUTTONS
+========================================================= */
+
+.floating-actions {
+
+    position: fixed;
+
+    right: 28px;
+    bottom: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    z-index: 9990;
+}
+
+
+.floating-btn {
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.floating-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Chat / Quote */
+
+.quote-float {
+
+    background: var(--ink);
+
+    color: white;
+}
+
+
+/* WhatsApp */
+
+.whatsapp-float {
+
+    background: #25D366;
+
+    color: white;
+}
+
+
+.floating-btn svg {
+
+    width: 27px;
+    height: 27px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+.whatsapp-float svg {
+
+    fill: currentColor;
+
+    stroke: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .quote-panel {
+
+        right: 12px;
+
+        width:
+            calc(100vw - 24px);
+
+        max-height:
+            calc(100vh - 24px);
+
+        border-radius: 24px;
+    }
+
+
+    .quote-header {
+
+        padding: 22px 21px 20px;
+    }
+
+
+    .quote-header h2 {
+
+        font-size: 24px;
+    }
+
+
+    .quote-header p {
+
+        font-size: 12px;
+    }
+
+
+    .quote-form {
+
+        padding: 22px 21px 23px;
+    }
+
+
+    .quote-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .floating-actions {
+
+        right: 17px;
+
+        bottom: 18px;
+
+        gap: 10px;
+    }
+
+
+    .floating-btn {
+
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .floating-btn svg {
+
+        width: 24px;
+        height: 24px;
+    }
 }
