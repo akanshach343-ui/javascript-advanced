@@ -168,10 +168,22 @@
 //     </div>
 //   )
 // };
+import { use, useState } from "react";
+
 
 function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick(){
+    setCount(count+1);
+  }
+  
+    //adding event handler here
+  // function handleClick(){
+  //   alert('You clicked me!');
+  // }
   return (
-    <button>I'm a button</button>
+    <button onClick={handleClick}>I'm a button clicked {count} times</button>
   );
 }
 
@@ -313,10 +325,18 @@ function ListsRendering() {
 
 */
 
+//responding to events: - by declaring event handler functions inside ur components. taking Mybutton for example.
+//now when u want to remember some info and display it. For example, maybe u want to count the no of times a butn is clicked. to do this, add state ur component. 
+//to do this import useSTATE FROM react. 
+
+
+
+
 export default function App() {
   return (
     <div>
       <h1> Welcome to my app</h1>
+      <MyButton/>
       <MyButton /><br />
       <Profile />
       <Compnent/><br/><br/>
