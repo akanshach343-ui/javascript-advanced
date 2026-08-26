@@ -330,7 +330,29 @@ function ListsRendering() {
 //to do this import useSTATE FROM react. 
 
 
+//passing down componenets state and using in one componenet
+function MyApp(){
+  const [count, setCount] = useState(0);
+  function hndClick(){
+    setCount(count+1);
+  }
 
+  return (
+    <div>
+      <h1>Counters that update separately </h1>
+      <MahButton count={count} onClick={hndClick}/>
+      <MahButton count={count} onClick={hndClick}/>
+    </div>
+  )
+}
+//info u pass down like this is called props. so in order to read the button we need to change how it reads props.
+function MahButton({count, onClick}){
+  return(
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  )
+}
 
 export default function App() {
   return (
@@ -341,6 +363,7 @@ export default function App() {
       <Profile />
       <Compnent/><br/><br/>
       <ListsRendering/>
+      <MyApp/>
 
     </div>
   )
